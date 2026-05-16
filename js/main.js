@@ -2,16 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─── FAQ accordion ─────────────────────────────────────────────
   document.querySelectorAll('.faq-item__question').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('is-open');
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('is-open');
-        i.querySelector('.faq-item__question')?.setAttribute('aria-expanded', 'false');
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.faq-item__question').forEach(q => {
+        q.setAttribute('aria-expanded', 'false');
       });
-      if (!isOpen) {
-        item.classList.add('is-open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
+      if (!isOpen) btn.setAttribute('aria-expanded', 'true');
     });
   });
 
@@ -102,19 +97,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─── Mobile hamburger menu ──────────────────────────────────────
   const menuBtn = document.querySelector('.navbar__menu');
   const mobileNav = document.querySelector('.navbar__mobile-nav');
+  const overlay = document.querySelector('.navbar__overlay');
+
+  function openDrawer() {
+    mobileNav.classList.add('is-open');
+    overlay?.classList.add('is-open');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    mobileNav.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeDrawer() {
+    mobileNav.classList.remove('is-open');
+    overlay?.classList.remove('is-open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    mobileNav.setAttribute('aria-hidden', 'true');
+  }
+
   if (menuBtn && mobileNav) {
     menuBtn.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('is-open');
-      menuBtn.setAttribute('aria-expanded', String(isOpen));
-      mobileNav.setAttribute('aria-hidden', String(!isOpen));
+      mobileNav.classList.contains('is-open') ? closeDrawer() : openDrawer();
     });
-    // Close on nav link click
+
     mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('is-open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        mobileNav.setAttribute('aria-hidden', 'true');
-      });
+      link.addEventListener('click', closeDrawer);
     });
+
+    overlay?.addEventListener('click', closeDrawer);
   }
 });

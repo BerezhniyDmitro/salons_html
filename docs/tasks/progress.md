@@ -10,117 +10,117 @@
 
 ### navbar — `mobile/navbar.md`
 - [x] M-NAV-01. Базовий layout: hamburger ліворуч, logo по центру
-- [ ] M-NAV-02. Сховати desktop-блоки базово
-- [ ] M-NAV-03. Hit-area hamburger ≥ 44×44
-- [ ] M-NAV-04. Drawer slide-in (right edge)
-- [ ] M-NAV-05. Logic toggle drawer у js/main.js
-- [ ] M-NAV-06. Drawer праворуч-наліво 40% ширини, CSS transform анімація
+- [x] M-NAV-02. Сховати desktop-блоки базово
+- [x] M-NAV-03. Hit-area hamburger ≥ 44×44
+- [x] M-NAV-04. Drawer slide-in (right edge)
+- [x] M-NAV-05. Logic toggle drawer у js/main.js
+- [x] M-NAV-06. Drawer праворуч-наліво 40% ширини, CSS transform анімація
 
 ### hero — `mobile/hero.md`
-- [ ] M-HERO-01. Hero займає 70vh, фото — фон
-- [ ] M-HERO-02. Hero-card повної ширини
-- [ ] M-HERO-03. Mobile-first типографіка
-- [ ] M-HERO-04. CTA повної ширини
-- [ ] M-HERO-05. Сховати scroll-indicator базово
-- [ ] M-HERO-06. Divider як тонка champagne лінія
+- [x] M-HERO-01. Hero займає 70vh, фото — фон
+- [x] M-HERO-02. Hero-card повної ширини
+- [x] M-HERO-03. Mobile-first типографіка
+- [x] M-HERO-04. CTA повної ширини
+- [x] M-HERO-05. Сховати scroll-indicator базово
+- [x] M-HERO-06. Divider як тонка champagne лінія
 
 ### works-slider — `mobile/works-slider.md`
-- [ ] M-WORKS-01. Об'єднати DOM-дублі у єдиний track
-- [ ] M-WORKS-02. Pills горизонтальний скрол в одну лінію
-- [ ] M-WORKS-03. Track вертикальний стек
-- [ ] M-WORKS-04. Картки aspect-ratio 4/3
-- [ ] M-WORKS-05. Caption центрований
-- [ ] M-WORKS-06. Стрілки навігації центровані під track
-- [ ] M-WORKS-07. Сховати десктоп .nav-arrow--outlined базово
+- [x] M-WORKS-01. Об'єднати DOM-дублі у єдиний track
+- [x] M-WORKS-02. Pills горизонтальний скрол в одну лінію
+- [x] M-WORKS-03. Track вертикальний стек
+- [x] M-WORKS-04. Картки aspect-ratio 4/3
+- [x] M-WORKS-05. Caption центрований
+- [x] M-WORKS-06. Стрілки навігації центровані під track
+- [x] M-WORKS-07. Сховати десктоп .nav-arrow--outlined базово
 
 ### stats — `mobile/stats.md`
-- [ ] M-STATS-01. Сітка 2×2 на темному фоні
-- [ ] M-STATS-02. Текст по центру кожної комірки
-- [ ] M-STATS-03. Number mobile-first
-- [ ] M-STATS-04. Label і subtitle
+- [x] M-STATS-01. Сітка 2×2 на темному фоні
+- [x] M-STATS-02. Текст по центру кожної комірки
+- [x] M-STATS-03. Number mobile-first
+- [x] M-STATS-04. Label і subtitle
 
 ### specialists — `mobile/specialists.md`
-- [ ] M-SPEC-01. Об'єднати DOM-дублі у єдиний track
-- [ ] M-SPEC-02. Track вертикальний стек
-- [ ] M-SPEC-03. Inline background-image для аватарок
-- [ ] M-SPEC-04. Аватарка кругла 96px, центрована
-- [ ] M-SPEC-05. Card layout
-- [ ] M-SPEC-06. CTA filled pill, повна ширина
-- [ ] M-SPEC-07. Сховати desktop-контролі базово
-- [ ] M-SPEC-08. Eyebrow та title центровані
+- [x] M-SPEC-01. Об'єднати DOM-дублі у єдиний track
+- [x] M-SPEC-02. Track вертикальний стек
+- [x] M-SPEC-03. Inline background-image для аватарок
+- [x] M-SPEC-04. Аватарка кругла 96px, центрована
+- [x] M-SPEC-05. Card layout
+- [x] M-SPEC-06. CTA filled pill, повна ширина
+- [x] M-SPEC-07. Сховати desktop-контролі базово
+- [x] M-SPEC-08. Eyebrow та title центровані
 
 ### services — `mobile/services.md`
-- [ ] M-SERV-01. Grid — одна колонка з вертикальним стеком
-- [ ] M-SERV-02. Service-card вертикальна (фото зверху)
-- [ ] M-SERV-03. Image висота 180px
-- [ ] M-SERV-04. Body padding і spacing
-- [ ] M-SERV-05. Badge "ПОПУЛЯРНЕ" у правому верхньому куті фото
-- [ ] M-SERV-06. Meta-row з price і duration
-- [ ] M-SERV-07. CTA filled pill, повна ширина
-- [ ] M-SERV-08. Секція з темним фоном
-- [ ] M-SERV-09. .services__price-link центрований
+- [x] M-SERV-01. Grid — одна колонка з вертикальним стеком
+- [x] M-SERV-02. Service-card вертикальна (фото зверху)
+- [x] M-SERV-03. Image висота 180px
+- [x] M-SERV-04. Body padding і spacing
+- [x] M-SERV-05. Badge "ПОПУЛЯРНЕ" у правому верхньому куті фото
+- [x] M-SERV-06. Meta-row з price і duration
+- [x] M-SERV-07. CTA filled pill, повна ширина
+- [x] M-SERV-08. Секція з темним фоном
+- [x] M-SERV-09. .services__price-link центрований
 
 ### portfolio — `mobile/portfolio.md`
-- [ ] M-PORT-01. Прибрати DOM-розбиття .portfolio__grid-row
-- [ ] M-PORT-02. Об'єднати desktop masonry і mobile grid
-- [ ] M-PORT-03. Pills горизонтальний скрол
-- [ ] M-PORT-04. Grid 2×2 з gap 8px
-- [ ] M-PORT-05. Items aspect-ratio 1/1
-- [ ] M-PORT-06. Header центрований
-- [ ] M-PORT-07. Кнопка повної ширини, filled dark
+- [x] M-PORT-01. Прибрати DOM-розбиття .portfolio__grid-row
+- [x] M-PORT-02. Об'єднати desktop masonry і mobile grid
+- [x] M-PORT-03. Pills горизонтальний скрол
+- [x] M-PORT-04. Grid 2×2 з gap 8px
+- [x] M-PORT-05. Items aspect-ratio 1/1
+- [x] M-PORT-06. Header центрований
+- [x] M-PORT-07. Кнопка повної ширини, filled dark
 
 ### faq — `mobile/faq.md`
-- [ ] M-FAQ-01. Базовий фон і padding
-- [ ] M-FAQ-02. Header центрований
-- [ ] M-FAQ-03. Question — flex з chevron справа
-- [ ] M-FAQ-04. Item border-bottom
-- [ ] M-FAQ-05. Answer прихований базово
-- [ ] M-FAQ-06. Toggle логіка у js/main.js
-- [ ] M-FAQ-07. Chevron transition
+- [x] M-FAQ-01. Базовий фон і padding
+- [x] M-FAQ-02. Header центрований
+- [x] M-FAQ-03. Question — flex з chevron справа
+- [x] M-FAQ-04. Item border-bottom
+- [x] M-FAQ-05. Answer прихований базово
+- [x] M-FAQ-06. Toggle логіка у js/main.js
+- [x] M-FAQ-07. Chevron transition
 
 ### testimonials — `mobile/testimonials.md`
-- [ ] M-TEST-01. Прибрати дубль .testimonial-card.mobile-only
-- [ ] M-TEST-02. .reviews__grid — один контейнер, базово одна картка
-- [ ] M-TEST-03. Сховати .reviews__rating-row на мобілці
-- [ ] M-TEST-04. .testimonial-card — фон, padding
-- [ ] M-TEST-05. Inline background-image або ініціали для всіх mobile avatars
-- [ ] M-TEST-06. Quote типографіка
-- [ ] M-TEST-07. Client row layout
-- [ ] M-TEST-08. Stars champagne
-- [ ] M-TEST-09. Dots центровані під каруселлю
-- [ ] M-TEST-10. Header центрований
+- [x] M-TEST-01. Прибрати дубль .testimonial-card.mobile-only
+- [x] M-TEST-02. .reviews__grid — один контейнер, базово одна картка
+- [x] M-TEST-03. Сховати .reviews__rating-row на мобілці
+- [x] M-TEST-04. .testimonial-card — фон, padding
+- [x] M-TEST-05. Inline background-image або ініціали для всіх mobile avatars
+- [x] M-TEST-06. Quote типографіка
+- [x] M-TEST-07. Client row layout
+- [x] M-TEST-08. Stars champagne
+- [x] M-TEST-09. Dots центровані під каруселлю
+- [x] M-TEST-10. Header центрований
 
 ### map — `mobile/map.md`
-- [ ] M-MAP-01. Базовий layout — вертикальний стек
-- [ ] M-MAP-02. Прибрати дубль .map-section__image.mobile-only
-- [ ] M-MAP-03. Map image — повна ширина, висота 240px
-- [ ] M-MAP-04. Header типографіка
-- [ ] M-MAP-05. Details rows — flex з іконками
-- [ ] M-MAP-06. Divider champagne
-- [ ] M-MAP-07. CTA "ЗАПИСАТИСЬ ОНЛАЙН" — повна ширина filled
-- [ ] M-MAP-08. Route link з іконкою
-- [ ] M-MAP-09. Pin "LUMINA" базово приховано або спрощено
+- [x] M-MAP-01. Базовий layout — вертикальний стек
+- [x] M-MAP-02. Прибрати дубль .map-section__image.mobile-only
+- [x] M-MAP-03. Map image — повна ширина, висота 240px
+- [x] M-MAP-04. Header типографіка
+- [x] M-MAP-05. Details rows — flex з іконками
+- [x] M-MAP-06. Divider champagne
+- [x] M-MAP-07. CTA "ЗАПИСАТИСЬ ОНЛАЙН" — повна ширина filled
+- [x] M-MAP-08. Route link з іконкою
+- [x] M-MAP-09. Pin "LUMINA" базово приховано або спрощено
 
 ### footer — `mobile/footer.md`
-- [ ] M-FOOT-01. Базовий layout — вертикальний стек
-- [ ] M-FOOT-02. Прибрати DOM-дублі .footer__nav.mobile-only і .footer__contact.mobile-only
-- [ ] M-FOOT-03. .footer__main стек на мобілці
-- [ ] M-FOOT-04. Brand центрований
-- [ ] M-FOOT-05. Tagline під лого
-- [ ] M-FOOT-06. Socials центровані
-- [ ] M-FOOT-07. Колонки footer (на мобілці) — стек з заголовком
-- [ ] M-FOOT-08. Сховати newsletter базово (або переверстати)
-- [ ] M-FOOT-09. .footer__bottom стек центрований
-- [ ] M-FOOT-10. Divider тонка champagne лінія
-- [ ] M-FOOT-11. Legal links центровані
+- [x] M-FOOT-01. Базовий layout — вертикальний стек
+- [x] M-FOOT-02. Прибрати DOM-дублі .footer__nav.mobile-only і .footer__contact.mobile-only
+- [x] M-FOOT-03. .footer__main стек на мобілці
+- [x] M-FOOT-04. Brand центрований
+- [x] M-FOOT-05. Tagline під лого
+- [x] M-FOOT-06. Socials центровані
+- [x] M-FOOT-07. Колонки footer (на мобілці) — стек з заголовком
+- [x] M-FOOT-08. Сховати newsletter базово (або переверстати)
+- [x] M-FOOT-09. .footer__bottom стек центрований
+- [x] M-FOOT-10. Divider тонка champagne лінія
+- [x] M-FOOT-11. Legal links центровані
 
 ### float-btn — `mobile/float-btn.md`
-- [ ] M-FLOAT-01. Створити окремий компонент
-- [ ] M-FLOAT-02. Базовий стан — кругла іконка 56px
-- [ ] M-FLOAT-03. SVG-іконка
-- [ ] M-FLOAT-04. Сховати текст-span на мобілці
-- [ ] M-FLOAT-05. Padding-bottom body для уникнення перекриття
-- [ ] M-FLOAT-06. На десктопі — кнопка з текстом (pill)
+- [x] M-FLOAT-01. Створити окремий компонент
+- [x] M-FLOAT-02. Базовий стан — кругла іконка 56px
+- [x] M-FLOAT-03. SVG-іконка
+- [x] M-FLOAT-04. Сховати текст-span на мобілці
+- [x] M-FLOAT-05. Padding-bottom body для уникнення перекриття
+- [x] M-FLOAT-06. На десктопі — кнопка з текстом (pill)
 
 ---
 

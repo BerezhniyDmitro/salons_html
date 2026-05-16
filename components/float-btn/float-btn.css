@@ -1,0 +1,43 @@
+.float-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--champagne);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--ink) 20%, transparent);
+  text-decoration: none;
+}
+
+.float-btn svg {
+  width: 24px;
+  height: 24px;
+  color: var(--charcoal);
+}
+
+.float-btn span {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .float-btn {
+    width: auto;
+    padding: 14px 24px;
+    border-radius: 999px;
+    gap: 8px;
+  }
+
+  .float-btn span {
+    display: inline;
+    font-size: 13px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: 0.1em;
+  }
+}

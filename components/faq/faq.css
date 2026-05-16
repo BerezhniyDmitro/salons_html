@@ -1,9 +1,8 @@
 .faq {
-  background-color: var(--ivory);
-  padding: 40px 20px;
+  background: var(--gold-wash);
+  padding: 48px 16px;
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
 .faq__header {
@@ -11,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   text-align: center;
 }
 
@@ -35,59 +34,63 @@
 }
 
 .faq-item {
-  border-top: 1px solid var(--pearl);
-  padding: 24px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  border-bottom: 1px solid var(--sand);
 }
 
 .faq-item__question {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: left;
+  background: transparent;
+  border: none;
   cursor: pointer;
   gap: 12px;
 }
 
 .faq-item__question-text {
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ink);
   flex: 1;
 }
 
 .faq-item__icon {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: var(--champagne);
   flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
-.faq-item.is-open .faq-item__icon {
+.faq-item__question[aria-expanded="true"] .faq-item__icon {
   transform: rotate(180deg);
 }
 
 .faq-item__answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: max-height 0.3s ease, padding 0.3s ease;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--stone);
   line-height: 1.6;
-  display: none;
 }
 
-.faq-item.is-open .faq-item__answer {
-  display: block;
+.faq-item__question[aria-expanded="true"] + .faq-item__answer {
+  max-height: 300px;
+  padding: 0 0 20px;
 }
 
 /* ─── Desktop ──────────────────────────────────────────────────── */
 @media (min-width: 1200px) {
   .faq {
     padding: 96px 120px;
-    gap: 0;
   }
 
   .faq__header {
@@ -105,7 +108,7 @@
     text-align: left;
   }
 
-  .faq-item__question-text {
+  .faq-item__question {
     font-size: 16px;
   }
 

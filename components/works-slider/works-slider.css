@@ -1,6 +1,8 @@
+/* ── works-slider ─────────────────────────────────── */
+
 .works-slider {
   background-color: var(--ivory);
-  padding: 32px 20px;
+  padding: 32px 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -13,6 +15,7 @@
   gap: 12px;
   align-items: center;
   text-align: center;
+  padding: 0 16px;
 }
 
 .works-slider__eyebrow {
@@ -33,65 +36,82 @@
   line-height: 1.2;
 }
 
+/* M-WORKS-02: pills — горизонтальний скрол в один рядок */
 .works-slider__pills {
   display: flex;
-  flex-direction: column;
+  flex-wrap: nowrap;
   gap: 8px;
+  padding: 0 16px 16px;
+  scrollbar-width: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* M-WORKS-01: carousel-обгортка — вертикальний стек на мобілці */
+.works-slider__carousel {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
-.works-slider__pills-row {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.works-slider__mobile-cards {
-  width: 100%;
+/* M-WORKS-03: track — вертикальний стек */
+.works-slider__track {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
+  padding: 0 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* works-card */
+.works-card {
+  display: flex;
+  flex-direction: column;
+}
 
-.comparison-card {
-  position: relative;
+/* M-WORKS-04: картка aspect-ratio 4/3 */
+.works-card__image-wrap {
+  aspect-ratio: 4 / 3;
+  min-height: 240px;
   border-radius: 12px;
   overflow: hidden;
-  height: 220px;
+  position: relative;
+}
+
+.works-card__image {
   width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
 }
 
-.comparison-card__before-half {
+.works-card__overlay {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  inset: 0;
+  background: rgba(28, 25, 23, 0.4);
+  border-radius: 12px 0 0 12px;
+  width: 45%;
 }
 
-.comparison-card__divider {
+.works-card__divider {
   position: absolute;
-  left: 50%;
+  left: 45%;
   top: 0;
   width: 2px;
   height: 100%;
-  background: var(--ivory);
-  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.8);
 }
 
-.comparison-card__handle {
+.works-card__handle {
   position: absolute;
-  left: 50%;
+  left: 45%;
   top: 50%;
+  transform: translate(-50%, -50%);
   width: 32px;
   height: 32px;
-  border-radius: 16px;
-  background-color: var(--champagne);
-  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--champagne);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,9 +119,9 @@
   cursor: ew-resize;
 }
 
-.comparison-card__label {
+.works-card__label {
   position: absolute;
-  top: 16px;
+  top: 12px;
   font-family: var(--font-body);
   font-size: 10px;
   font-weight: 700;
@@ -109,52 +129,150 @@
   letter-spacing: 2px;
 }
 
-.comparison-card__label--before {
-  left: 16px;
+.works-card__label--before {
+  left: 12px;
 }
 
-.comparison-card__label--after {
-  right: 16px;
+.works-card__label--after {
+  left: 52%;
+  color: var(--champagne);
 }
 
-.works-slider__caption {
-  font-family: var(--font-body);
+/* M-WORKS-05: caption центрований */
+.works-card__caption {
+  text-align: center;
   font-size: 13px;
   color: var(--stone);
-  text-align: center;
+  margin-top: 12px;
+  font-family: var(--font-body);
 }
 
+/* M-WORKS-06: мобільна навігація центрована під track */
 .works-slider__nav {
   display: flex;
   justify-content: center;
-  gap: 48px;
+  gap: 12px;
+  margin-top: 24px;
 }
 
+.nav-arrow {
+  width: 40px;
+  height: 40px;
+  background: var(--charcoal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
 
-.works-slider__filter-text { display: none; }
-.works-card { display: none; }
-.works-slider__slider-row { display: none; }
+/* M-WORKS-07: десктопні outlined стрілки приховані базово */
+.nav-arrow--outlined {
+  display: none;
+}
+
+/* десктопний текстовий фільтр прихований на мобілці */
+.works-slider__filter-text {
+  display: none;
+}
+
+/* ── Desktop @media (min-width: 1200px) ───────────── */
 
 @media (min-width: 1200px) {
-  .works-slider { padding: 96px 120px; gap: 40px; align-items: center; }
-  .works-slider__eyebrow { font-size: 11px; letter-spacing: 0.12em; }
-  .works-slider__title { font-size: 44px; letter-spacing: -0.01em; text-align: center; }
-  .works-slider__pills { display: none; }
-  .works-slider__filter-text { display: block; font-family: var(--font-body); font-size: 12px; color: var(--stone); letter-spacing: 0.04em; text-align: center; }
-  .works-slider__slider-row { display: flex; align-items: center; gap: 0; width: 100%; }
-  .works-slider__cards { display: flex; gap: 20px; flex: 1; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 0 20px; }
-  .works-slider__cards::-webkit-scrollbar { display: none; }
-  .works-card { flex: 1; display: flex; flex-direction: column; cursor: pointer; }
-  .works-card__image-wrap { position: relative; height: 300px; border-radius: 16px; overflow: hidden; }
-  .works-card__image { width: 100%; height: 100%; background-size: cover; background-position: center; }
-  .works-card__overlay { position: absolute; inset: 0; background: rgba(28,25,23,0.4); border-radius: 16px 0 0 16px; width: 45%; }
-  .works-card__divider { position: absolute; left: 45%; top: 0; width: 2px; height: 100%; background: rgba(255,255,255,0.8); }
-  .works-card__handle { position: absolute; left: 45%; top: 50%; transform: translate(-50%,-50%); width: 24px; height: 24px; border-radius: 50%; background: var(--champagne); }
-  .works-card__label { position: absolute; top: 12px; font-family: var(--font-body); font-size: 11px; font-weight: 700; color: #fff; letter-spacing: 2px; }
-  .works-card__label--before { left: 12px; }
-  .works-card__label--after { left: 52%; color: var(--champagne); }
-  .works-card__caption { font-family: var(--font-body); font-size: 13px; color: var(--stone); text-align: center; margin-top: 12px; }
-  .nav-arrow--outlined { background: rgba(28,25,23,0.6); border: 1px solid var(--champagne); flex-shrink: 0; width: 48px; height: 48px; }
-  .works-slider__mobile-cards { display: none; }
-  .works-slider__caption { display: none; }
+  .works-slider {
+    padding: 96px 120px;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .works-slider__eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  .works-slider__title {
+    font-size: 44px;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+
+  /* pills приховані — замінені текстовим фільтром */
+  .works-slider__pills {
+    display: none;
+  }
+
+  /* текстовий фільтр видимий */
+  .works-slider__filter-text {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--stone);
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  /* carousel — горизонтальний рядок зі стрілками по боках */
+  .works-slider__carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+  }
+
+  /* track горизонтальний */
+  .works-slider__track {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex: 1;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px;
+  }
+
+  .works-slider__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .works-card {
+    flex: 1;
+    min-width: 200px;
+    cursor: pointer;
+  }
+
+  .works-card__image-wrap {
+    aspect-ratio: 1 / 1;
+    min-height: unset;
+    border-radius: 50%;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .works-card__overlay {
+    border-radius: 0;
+  }
+
+  /* десктопні outlined стрілки видимі */
+  .nav-arrow--outlined {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    background: rgba(28, 25, 23, 0.6);
+    border: 1px solid var(--champagne);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    color: var(--ivory);
+  }
+
+  /* мобільна nav прихована */
+  .works-slider__nav {
+    display: none;
+  }
 }

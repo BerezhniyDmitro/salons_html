@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="components/testimonials/testimonials.css">
   <link rel="stylesheet" href="components/map/map.css">
   <link rel="stylesheet" href="components/footer/footer.css">
+  <link rel="stylesheet" href="components/float-btn/float-btn.css">
 </head>
 <body>
 
@@ -67,12 +68,13 @@
     <a href="#faq" class="navbar__mobile-link">Про нас</a>
     <a href="#contact" class="navbar__mobile-link">Контакти</a>
   </nav>
+  <div class="navbar__overlay" aria-hidden="true"></div>
 
   <!-- ╔══════════════════════════════╗ -->
   <!-- ║  HERO                         ║ -->
   <!-- ╚══════════════════════════════╝ -->
   <section class="hero" id="hero">
-    <div class="hero__content">
+    <div class="hero__content hero__card">
       <span class="hero__eyebrow">BEAUTY SALON · КИЇВ</span>
       <h1 class="hero__title">Краса — це мистецтво,<br>яке живе у деталях</h1>
       <div class="hero__divider"></div>
@@ -87,7 +89,7 @@
       </div>
     </div>
     <!-- Desktop: scroll-down indicator -->
-    <div class="hero__scroll-indicator desktop-only" aria-hidden="true">
+    <div class="hero__scroll-indicator" aria-hidden="true">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="6 9 12 15 18 9"/>
       </svg>
@@ -100,26 +102,39 @@
   <section class="works-slider" id="works">
     <div class="works-slider__header">
       <span class="works-slider__eyebrow">НАШІ РОБОТИ</span>
-      <h2 class="works-slider__title">Результати, що говорять<br class="desktop-only"> самі за себе</h2>
-      <!-- Desktop: filter as text -->
+      <h2 class="works-slider__title">Результати, що говорять самі за себе</h2>
       <p class="works-slider__filter-text">Всі&nbsp; · &nbsp;Обличчя&nbsp; · &nbsp;Тіло&nbsp; · &nbsp;Нігті&nbsp; · &nbsp;Волосся</p>
     </div>
 
-    <!-- Desktop: horizontal before/after slider -->
-    <div class="works-slider__slider-row desktop-only">
+    <!-- Pills: горизонтальний скрол на мобілці, приховані на десктопі -->
+    <div class="works-slider__pills">
+      <button class="pill pill--active">Всі</button>
+      <button class="pill pill--inactive">Обличчя</button>
+      <button class="pill pill--inactive">Тіло</button>
+      <button class="pill pill--inactive">Нігті</button>
+      <button class="pill pill--inactive">Волосся</button>
+    </div>
+
+    <!-- Carousel: стрілки по боках на десктопі, track вертикальний/горизонтальний -->
+    <div class="works-slider__carousel">
       <button class="nav-arrow nav-arrow--outlined" aria-label="Попередній">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="15 18 9 12 15 6"/>
         </svg>
       </button>
 
-      <div class="works-slider__cards">
+      <div class="works-slider__track">
         <div class="works-card">
           <div class="works-card__image-wrap">
             <div class="works-card__image" style="background-image: url('images/generated-1777444495079.png');"></div>
             <div class="works-card__overlay"></div>
             <div class="works-card__divider"></div>
-            <div class="works-card__handle"></div>
+            <div class="works-card__handle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
+                <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
+              </svg>
+            </div>
             <span class="works-card__label works-card__label--before">ДО</span>
             <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
           </div>
@@ -130,7 +145,12 @@
             <div class="works-card__image" style="background-image: url('images/generated-1777444517456.png');"></div>
             <div class="works-card__overlay"></div>
             <div class="works-card__divider"></div>
-            <div class="works-card__handle"></div>
+            <div class="works-card__handle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
+                <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
+              </svg>
+            </div>
             <span class="works-card__label works-card__label--before">ДО</span>
             <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
           </div>
@@ -141,7 +161,12 @@
             <div class="works-card__image" style="background-image: url('images/generated-1777444496602.png');"></div>
             <div class="works-card__overlay"></div>
             <div class="works-card__divider"></div>
-            <div class="works-card__handle"></div>
+            <div class="works-card__handle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
+                <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
+              </svg>
+            </div>
             <span class="works-card__label works-card__label--before">ДО</span>
             <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
           </div>
@@ -152,7 +177,12 @@
             <div class="works-card__image" style="background-image: url('images/generated-1777444498598.png');"></div>
             <div class="works-card__overlay"></div>
             <div class="works-card__divider"></div>
-            <div class="works-card__handle"></div>
+            <div class="works-card__handle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
+                <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
+              </svg>
+            </div>
             <span class="works-card__label works-card__label--before">ДО</span>
             <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
           </div>
@@ -167,53 +197,14 @@
       </button>
     </div>
 
-    <!-- Mobile: filter pills + comparison cards -->
-    <div class="works-slider__mobile-cards mobile-only">
-      <div class="works-slider__pills">
-        <div class="works-slider__pills-row">
-          <button class="pill pill--active">Всі</button>
-          <button class="pill pill--inactive">Обличчя</button>
-          <button class="pill pill--inactive">Тіло</button>
-        </div>
-        <div class="works-slider__pills-row">
-          <button class="pill pill--inactive">Нігті</button>
-          <button class="pill pill--inactive">Волосся</button>
-        </div>
-      </div>
-      <div class="comparison-card" style="background-image: url('images/generated-1777451098735.png');">
-        <div class="comparison-card__before-half"></div>
-        <div class="comparison-card__divider"></div>
-        <div class="comparison-card__handle">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
-            <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
-          </svg>
-        </div>
-        <span class="comparison-card__label comparison-card__label--before">ДО</span>
-        <span class="comparison-card__label comparison-card__label--after">ПІСЛЯ</span>
-      </div>
-      <p class="works-slider__caption">Догляд за обличчям · від 890 грн</p>
-      <div class="comparison-card" style="background-image: url('images/generated-1777451111414.png');">
-        <div class="comparison-card__before-half"></div>
-        <div class="comparison-card__divider"></div>
-        <div class="comparison-card__handle">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
-            <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
-          </svg>
-        </div>
-        <span class="comparison-card__label comparison-card__label--before">ДО</span>
-        <span class="comparison-card__label comparison-card__label--after">ПІСЛЯ</span>
-      </div>
-      <p class="works-slider__caption">Масаж тіла · від 1 200 грн</p>
-      <div class="works-slider__nav">
-        <button class="nav-arrow" aria-label="Попередній">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button class="nav-arrow" aria-label="Наступний">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-      </div>
+    <!-- Мобільна навігація (центрована під track) -->
+    <div class="works-slider__nav">
+      <button class="nav-arrow" aria-label="Попередній">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="nav-arrow" aria-label="Наступний">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div>
   </section>
 
@@ -253,12 +244,11 @@
       <p class="specialists__subtitle">Наші майстри — це справжні художники, які постійно навчаються та вдосконалюють свою майстерність.</p>
     </div>
 
-    <!-- Desktop: carousel with arrows -->
-    <div class="specialists__carousel desktop-only">
+    <div class="specialists__carousel">
       <button class="carousel-arrow" aria-label="Попередній">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
-      <div class="specialists__cards-viewport">
+      <div class="specialists__track">
         <div class="specialist-card">
           <div class="specialist-card__avatar" style="background-image: url('images/generated-1777444515790.png');"></div>
           <span class="specialist-card__name">Аліна Коваль</span>
@@ -286,36 +276,14 @@
       </button>
     </div>
 
-    <!-- Desktop: dots & counter -->
-    <div class="specialists__dots desktop-only">
+    <div class="specialists__dots">
       <button class="testimonials__dot testimonials__dot--active" aria-label="Майстер 1"></button>
       <button class="testimonials__dot testimonials__dot--inactive" aria-label="Майстер 2"></button>
       <button class="testimonials__dot testimonials__dot--inactive" aria-label="Майстер 3"></button>
       <span class="specialists__counter">МАЙСТЕР 1 З 3</span>
     </div>
-    <button class="specialists__all-btn desktop-only">УСЯ КОМАНДА →</button>
+    <button class="specialists__all-btn">УСЯ КОМАНДА →</button>
 
-    <!-- Mobile: stacked cards -->
-    <div class="specialists__mobile-cards mobile-only">
-      <div class="specialist-card">
-        <div class="specialist-card__avatar"></div>
-        <span class="specialist-card__name">Аліна Коваль</span>
-        <span class="specialist-card__tags">Косметолог · #антивіковий · #пілінги</span>
-        <a href="#" class="specialist-card__cta">ЗАПИСАТИСЬ ДО АЛІНИ →</a>
-      </div>
-      <div class="specialist-card">
-        <div class="specialist-card__avatar"></div>
-        <span class="specialist-card__name">Марина Петренко</span>
-        <span class="specialist-card__tags">Масажист · #класичний · #лімфодренаж</span>
-        <a href="#" class="specialist-card__cta">ЗАПИСАТИСЬ ДО МАРИНИ →</a>
-      </div>
-      <div class="specialist-card">
-        <div class="specialist-card__avatar"></div>
-        <span class="specialist-card__name">Олена Бондар</span>
-        <span class="specialist-card__tags">Майстер манікюру · #гель-лак · #нарощування</span>
-        <a href="#" class="specialist-card__cta">ЗАПИСАТИСЬ ДО ОЛЕНИ →</a>
-      </div>
-    </div>
   </section>
 
   <!-- ╔══════════════════════════════╗ -->
@@ -378,8 +346,8 @@
       <p class="portfolio__subtitle">Кожна робота — це унікальна історія краси, створена з увагою та любов'ю до деталей.</p>
     </div>
 
-    <!-- Desktop: single-row filter pills -->
-    <div class="portfolio__pills-desktop">
+    <!-- Filter pills -->
+    <div class="portfolio__pills">
       <button class="pill pill--active">Всі</button>
       <button class="pill pill--inactive">Обличчя</button>
       <button class="pill pill--inactive">Масаж</button>
@@ -387,38 +355,16 @@
       <button class="pill pill--inactive">Волосся</button>
     </div>
 
-    <!-- Desktop: 3-column masonry grid -->
-    <div class="portfolio__grid portfolio__grid--masonry desktop-only">
-      <div class="portfolio__col portfolio__col--1">
-        <div class="portfolio__item portfolio__item--full"
-             style="background-image: url('images/generated-1777444504245.png');"></div>
-      </div>
-      <div class="portfolio__col portfolio__col--2">
-        <div class="portfolio__item portfolio__item--tall"
-             style="background-image: url('images/generated-1777444517496.png');"></div>
-        <div class="portfolio__item portfolio__item--tall"
-             style="background-image: url('images/generated-1777444523242.png');"></div>
-      </div>
-      <div class="portfolio__col portfolio__col--3">
-        <div class="portfolio__item portfolio__item--short"
-             style="background-image: url('images/generated-1777445257990.png');"></div>
-        <div class="portfolio__item portfolio__item--short"
-             style="background-image: url('images/generated-1777445257113.png');"></div>
-        <div class="portfolio__item portfolio__item--short"
-             style="background-image: url('images/generated-1777445263257.png');"></div>
-      </div>
-    </div>
-
-    <!-- Mobile: 2×2 grid -->
-    <div class="portfolio__grid mobile-only">
-      <div class="portfolio__grid-row">
-        <div class="portfolio__grid-item" style="background-image: url('images/generated-1777451118098.png');"></div>
-        <div class="portfolio__grid-item" style="background-image: url('images/generated-1777451127052.png');"></div>
-      </div>
-      <div class="portfolio__grid-row">
-        <div class="portfolio__grid-item" style="background-image: url('images/generated-1777451126260.png');"></div>
-        <div class="portfolio__grid-item" style="background-image: url('images/generated-1777451116887.png');"></div>
-      </div>
+    <!-- Portfolio grid -->
+    <div class="portfolio__grid">
+      <div class="portfolio__item"
+           style="background-image: url('images/generated-1777451118098.png');"></div>
+      <div class="portfolio__item"
+           style="background-image: url('images/generated-1777451127052.png');"></div>
+      <div class="portfolio__item"
+           style="background-image: url('images/generated-1777451126260.png');"></div>
+      <div class="portfolio__item"
+           style="background-image: url('images/generated-1777451116887.png');"></div>
     </div>
 
     <button class="portfolio__btn">ПЕРЕГЛЯНУТИ ВСЕ ПОРТФОЛІО</button>
@@ -530,24 +476,6 @@
       </div>
     </div>
 
-    <!-- Mobile: single testimonial card -->
-    <div class="testimonial-card mobile-only">
-      <div class="testimonial-card__stars">
-        <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
-        <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
-        <span class="testimonial-card__star">★</span>
-      </div>
-      <p class="testimonial-card__quote">Найкращий салон у місті. Майстри уважні до деталей, атмосфера чудова — повертаюсь сюди знову і знову.</p>
-      <hr class="testimonial-card__divider">
-      <div class="testimonial-card__client">
-        <div class="testimonial-card__avatar"></div>
-        <div class="testimonial-card__info">
-          <span class="testimonial-card__name">Ольга Мельник</span>
-          <span class="testimonial-card__service">Догляд за обличчям</span>
-        </div>
-      </div>
-    </div>
-
     <div class="testimonials__dots">
       <button class="testimonials__dot testimonials__dot--active" aria-label="Відгук 1"></button>
       <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 2"></button>
@@ -584,17 +512,13 @@
       <a href="#" class="map-section__cta">ЗАПИСАТИСЬ ОНЛАЙН →</a>
     </div>
 
-    <!-- Desktop: map with pin -->
-    <div class="map-section__map-wrapper desktop-only">
+    <div class="map-section__map-wrapper">
       <div class="map-section__image"></div>
       <div class="map-section__pin">
         <svg class="map-section__pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         <div class="map-section__pin-label">LUMINA</div>
       </div>
     </div>
-
-    <!-- Mobile: simple map image -->
-    <div class="map-section__image mobile-only"></div>
   </section>
 
   <!-- ╔══════════════════════════════╗ -->
@@ -620,7 +544,7 @@
       </div>
 
       <!-- Desktop columns (hidden on mobile) -->
-      <div class="footer__col desktop-only">
+      <div class="footer__col">
         <span class="footer__col-title">ПОСЛУГИ</span>
         <a href="#" class="footer__col-link">Догляд за обличчям</a>
         <a href="#" class="footer__col-link">Масаж тіла</a>
@@ -628,7 +552,7 @@
         <a href="#" class="footer__col-link">Брови та вії</a>
         <a href="#" class="footer__col-link">Укладка та стрижка</a>
       </div>
-      <div class="footer__col desktop-only">
+      <div class="footer__col">
         <span class="footer__col-title">САЛОН</span>
         <a href="#" class="footer__col-link footer__col-link--highlight">Записатись онлайн →</a>
         <a href="#" class="footer__col-link">Про нас</a>
@@ -636,26 +560,13 @@
         <a href="#" class="footer__col-link">Галерея</a>
         <a href="#" class="footer__col-link">Акції та знижки</a>
       </div>
-      <div class="footer__col desktop-only">
+      <div class="footer__col">
         <span class="footer__col-title">КОНТАКТИ</span>
         <span class="footer__col-link">вул. Хрещатик, 10, Київ</span>
         <span class="footer__col-link">+380 44 123 45 67</span>
         <span class="footer__col-link">lumina@beauty.ua</span>
         <span class="footer__col-link">Пн–Пт: 9:00 — 20:00</span>
       </div>
-    </div>
-
-    <!-- Mobile: nav links -->
-    <nav class="footer__nav mobile-only">
-      <a href="#" class="footer__nav-link">Головна</a>
-      <a href="#" class="footer__nav-link">Послуги</a>
-      <a href="#" class="footer__nav-link">Майстри</a>
-      <a href="#" class="footer__nav-link">Контакти</a>
-    </nav>
-    <div class="footer__contact mobile-only">
-      <span class="footer__contact-item">Київ, вул. Хрещатик, 12</span>
-      <span class="footer__contact-item">+380 44 123 45 67</span>
-      <span class="footer__contact-item">hello@lumina.ua</span>
     </div>
 
     <!-- Desktop: newsletter row -->
