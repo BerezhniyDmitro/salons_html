@@ -67,12 +67,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── Works slider carousel ─────────────────────────────────────
   initCarousel({
-    wrap: '.works-slider__slider-row',
+    wrap: '.works-slider__carousel',
     viewport: '.works-slider__track',
     item: '.works-card',
     prevBtn: '.nav-arrow:first-child',
     nextBtn: '.nav-arrow:last-child',
   });
+
+  // ─── Works slider mobile nav ────────────────────────────────────
+  const worksTrack = document.querySelector('.works-slider__track');
+  const worksNav = document.querySelector('.works-slider__nav');
+  if (worksTrack && worksNav) {
+    const getStep = () => {
+      const item = worksTrack.querySelector('.works-card');
+      if (!item) return 280;
+      return item.offsetWidth + parseInt(getComputedStyle(worksTrack).columnGap || getComputedStyle(worksTrack).gap || 0);
+    };
+    worksNav.querySelector('[aria-label="Попередній"]')?.addEventListener('click', () => worksTrack.scrollBy({ left: -getStep(), behavior: 'smooth' }));
+    worksNav.querySelector('[aria-label="Наступний"]')?.addEventListener('click', () => worksTrack.scrollBy({ left: getStep(), behavior: 'smooth' }));
+  }
 
   function initCarousel({ wrap: wrapSel, viewport: viewportSel, item: itemSel, prevBtn: prevSel, nextBtn: nextSel }) {
     const wrap = document.querySelector(wrapSel);
@@ -92,6 +105,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     prev.addEventListener('click', () => viewport.scrollBy({ left: -getStep(), behavior: 'smooth' }));
     next.addEventListener('click', () => viewport.scrollBy({ left: getStep(), behavior: 'smooth' }));
+  }
+
+  // ─── Testimonials dots (mobile) ────────────────────────────────
+  const dots = document.querySelectorAll('.testimonials__dot');
+  const cards = document.querySelectorAll('.reviews__grid .testimonial-card');
+  if (dots.length && cards.length) {
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        if (getComputedStyle(dot.parentElement).display === 'none') return;
+        cards.forEach((c, j) => { c.style.display = j === i ? 'flex' : 'none'; });
+        dots.forEach(d => { d.classList.toggle('testimonials__dot--active', d === dot); d.classList.toggle('testimonials__dot--inactive', d !== dot); });
+      });
+    });
   }
 
   // ─── Mobile hamburger menu ──────────────────────────────────────
