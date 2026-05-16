@@ -54,20 +54,30 @@
   width: 100%;
 }
 
-/* M-WORKS-03: track — вертикальний стек */
+/* M-WORKS-03: track — горизонтальний слайдер */
 .works-slider__track {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  flex-direction: row;
+  gap: 16px;
   padding: 0 16px;
   width: 100%;
   box-sizing: border-box;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.works-slider__track::-webkit-scrollbar {
+  display: none;
 }
 
 /* works-card */
 .works-card {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+  width: calc(100vw - 64px);
 }
 
 /* M-WORKS-04: картка aspect-ratio 4/3 */
