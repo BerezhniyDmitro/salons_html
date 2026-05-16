@@ -9,11 +9,12 @@
 ## Mobile (base styles)
 
 ### navbar — `mobile/navbar.md`
-- [ ] M-NAV-01. Базовий layout: hamburger ліворуч, logo по центру
+- [x] M-NAV-01. Базовий layout: hamburger ліворуч, logo по центру
 - [ ] M-NAV-02. Сховати desktop-блоки базово
 - [ ] M-NAV-03. Hit-area hamburger ≥ 44×44
 - [ ] M-NAV-04. Drawer slide-in (right edge)
 - [ ] M-NAV-05. Logic toggle drawer у js/main.js
+- [ ] M-NAV-06. Drawer праворуч-наліво 40% ширини, CSS transform анімація
 
 ### hero — `mobile/hero.md`
 - [ ] M-HERO-01. Hero займає 70vh, фото — фон

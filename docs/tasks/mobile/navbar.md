@@ -19,3 +19,11 @@
 ## M-NAV-05. Logic toggle drawer у `js/main.js`
 - Click на `.navbar__menu` → переключити `aria-hidden` на `.navbar__mobile-nav`.
 - Click на mobile-link → закрити drawer.
+
+## M-NAV-06. Drawer праворуч-наліво, 40% ширини, CSS-анімація
+**Замінює поточну реалізацію max-height drawer на slide-in з правого боку.**
+- Прибрати `max-height` підхід у `.navbar__mobile-nav`.
+- `.navbar__mobile-nav { position: fixed; top: 0; right: 0; height: 100vh; width: 40%; background: var(--ink); transform: translateX(100%); transition: transform 0.35s ease; display: flex; flex-direction: column; padding: 80px 24px 32px; gap: 8px; z-index: 200; }`.
+- `.navbar__mobile-nav.is-open { transform: translateX(0); }`.
+- Overlay (напівпрозорий фон): `::before` або окремий `.navbar__overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); opacity: 0; pointer-events: none; transition: opacity 0.35s ease; z-index: 199; }` → `.navbar__overlay.is-open { opacity: 1; pointer-events: auto; }`.
+- JS: клік на `.navbar__menu` → toggle `.is-open` на `.navbar__mobile-nav` (і на overlay якщо є). Клік на overlay → закрити.
