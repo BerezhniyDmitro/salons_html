@@ -89,7 +89,7 @@
 .works-card__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(28, 25, 23, 0.4);
+  background: color-mix(in srgb, var(--ink) 40%, transparent);
   border-radius: 12px 0 0 12px;
   width: 45%;
 }
@@ -245,10 +245,11 @@
   }
 
   .works-card__image-wrap {
-    aspect-ratio: 1 / 1;
+    width: 200px;
+    height: 200px;
+    aspect-ratio: unset;
     min-height: unset;
     border-radius: 50%;
-    max-width: 240px;
     margin: 0 auto;
   }
 
@@ -261,7 +262,7 @@
     display: flex;
     width: 48px;
     height: 48px;
-    background: rgba(28, 25, 23, 0.6);
+    background: color-mix(in srgb, var(--ink) 60%, transparent);
     border: 1px solid var(--champagne);
     border-radius: 50%;
     align-items: center;

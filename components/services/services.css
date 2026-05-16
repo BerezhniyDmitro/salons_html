@@ -158,15 +158,16 @@
   .services__header { padding-inline: 0; }
   .services__title { font-size: 44px; }
   .services__eyebrow { font-size: 11px; letter-spacing: 0.12em; }
-  .services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 0; }
-  .service-card { background: var(--cream); color: var(--ink); border-radius: 20px; }
-  .service-card__image { height: 240px; }
-  .service-card__badge { top: 216px; right: auto; left: 16px; border-radius: 999px; }
-  .service-card__name { color: var(--ink); }
-  .service-card__desc { color: var(--stone); }
-  .service-card__meta { border-top: none; padding-top: 0; }
-  .service-card__price { color: var(--ink); }
-  .service-card__duration { color: var(--stone); }
-  .service-card__cta { background: var(--gradient-gold); color: var(--ink); font-size: 11px; padding: 0; height: 40px; letter-spacing: 0.06em; }
+  .services__grid { display: flex; flex-direction: column; gap: 32px; max-width: 1100px; margin: 0 auto; padding: 0; width: 100%; }
+  .service-card { flex-direction: row; background: var(--graphite); color: var(--cream); border-radius: 12px; }
+  .service-card__image { width: 45%; height: auto; min-height: 280px; flex-shrink: 0; }
+  .service-card__body { flex: 1; padding: 40px; display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+  .service-card__badge { top: 16px; right: 16px; left: auto; border-radius: 999px; }
+  .service-card__name { color: var(--cream); font-size: 26px; }
+  .service-card__desc { color: var(--sand); }
+  .service-card__meta { border-top: 1px solid color-mix(in srgb, var(--cream) 10%, transparent); padding-top: 16px; }
+  .service-card__price { color: var(--cream); }
+  .service-card__duration { color: var(--sand); }
+  .service-card__cta { background: var(--charcoal); color: var(--cream); width: auto; padding: 12px 28px; border: 1px solid var(--champagne); align-self: flex-start; }
   .services__price-link { margin-top: 0; }
 }

@@ -9,6 +9,7 @@
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 72px;
 }
 
 body {
@@ -39,21 +40,8 @@ h1, h2, h3 {
   font-weight: inherit;
 }
 
-/* ─── Focus styles ─────────────────────────────────────────────── */
+/* Focus styles */
 :focus-visible {
   outline: 2px solid var(--champagne);
   outline-offset: 3px;
-}
-
-/* ─── Responsive utilities ─────────────────────────────────────── */
-@media (max-width: 1199px) {
-  .desktop-only { display: none !important; }
-}
-
-@media (min-width: 1200px) {
-  .mobile-only { display: none !important; }
-
-  body {
-    max-width: none;
-  }
 }

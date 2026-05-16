@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─── Pill filter switching (works-slider + portfolio) ──────────
   document.querySelectorAll('.pill').forEach(pill => {
     pill.addEventListener('click', () => {
-      const row = pill.closest('.works-slider__pills, .portfolio__pills, .portfolio__pills-desktop');
+      const row = pill.closest('.works-slider__pills, .portfolio__pills');
       if (!row) return;
       row.querySelectorAll('.pill').forEach(p => {
         p.classList.remove('pill--active');
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─── Works slider carousel ─────────────────────────────────────
   initCarousel({
     wrap: '.works-slider__slider-row',
-    viewport: '.works-slider__cards',
+    viewport: '.works-slider__track',
     item: '.works-card',
     prevBtn: '.nav-arrow:first-child',
     nextBtn: '.nav-arrow:last-child',

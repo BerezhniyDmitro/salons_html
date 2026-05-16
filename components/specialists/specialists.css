@@ -47,7 +47,23 @@
 }
 
 .carousel-arrow { display: none; }
+
 .specialists__dots { display: none; }
+
+.specialists__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--pearl);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.specialists__dot--active {
+  background-color: var(--champagne);
+}
 .specialists__counter { display: none; }
 .specialists__all-btn { display: none; }
 
@@ -119,7 +135,7 @@
   .specialists__header { align-items: center; padding: 0; gap: 12px; }
   .specialists__title { font-size: 44px; }
   .specialists__subtitle { display: block; font-family: var(--font-body); font-size: 15px; color: var(--stone); line-height: 1.65; max-width: 520px; text-align: center; }
-  .specialists__carousel { display: flex; align-items: center; width: 100%; }
+  .specialists__carousel { display: flex; align-items: center; width: 100%; max-width: 1200px; }
   .specialists__track { flex-direction: row; gap: 32px; flex: 1; padding: 0; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .specialists__track::-webkit-scrollbar { display: none; }
   .specialist-card { flex-shrink: 0; width: 344px; padding: 32px 28px; gap: 16px; background-color: var(--ivory); border-radius: 20px; }
@@ -131,7 +147,6 @@
   .specialist-card__btn:hover { background: var(--charcoal); opacity: 1; }
   .carousel-arrow { width: 52px; height: 52px; border-radius: 50%; background: var(--cream); border: 1px solid var(--pearl); display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
   .carousel-arrow svg { width: 20px; height: 20px; color: var(--ink); }
-  .specialists__dots { display: flex; align-items: center; gap: 8px; }
-  .specialists__counter { font-family: var(--font-body); font-size: 10px; font-weight: 500; color: var(--champagne); letter-spacing: 0.08em; }
+  .specialists__dots { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 24px; }
   .specialists__all-btn { display: flex; align-items: center; border-radius: 999px; border: 1px solid var(--pearl); padding: 13px 32px; background: transparent; cursor: pointer; font-family: var(--font-body); font-size: 11px; font-weight: 500; color: var(--ink); letter-spacing: 0.06em; }
 }

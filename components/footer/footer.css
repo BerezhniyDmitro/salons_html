@@ -150,8 +150,6 @@
     border-radius: 50%;
   }
 
-  .footer__nav { display: none; }
-
   .footer__col { display: flex; width: auto; text-align: left; }
 
   .footer__col-title {
