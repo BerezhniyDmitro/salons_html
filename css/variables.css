@@ -1,0 +1,20 @@
+:root {
+  --champagne: #C8A96E;
+  --charcoal: #2C2825;
+  --cream: #F3EDE4;
+  --gold-light: #E6D5A8;
+  --gold-muted: #B89A5E;
+  --gold-soft: #D4B87A;
+  --gold-wash: #F0E8D2;
+  --graphite: #3D3832;
+  --ink: #1E1B18;
+  --ivory: #FAF7F2;
+  --pearl: #E8E0D4;
+  --sand: #D9CFC2;
+  --stone: #544D45;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+
+  --gradient-gold: linear-gradient(180deg, var(--champagne), var(--gold-soft));
+}

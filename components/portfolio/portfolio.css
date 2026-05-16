@@ -1,0 +1,174 @@
+.portfolio {
+  background-color: var(--ivory);
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.portfolio__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.portfolio__eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--champagne);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.portfolio__title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.2;
+  width: 100%;
+}
+
+.portfolio__pills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.portfolio__pills-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.portfolio__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.portfolio__grid-row {
+  display: flex;
+  gap: 8px;
+  height: 180px;
+}
+
+.portfolio__grid-item {
+  flex: 1;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.portfolio__btn {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  padding: 12px 32px;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-align: center;
+}
+
+.portfolio__btn:hover {
+  background-color: var(--ink);
+  color: var(--ivory);
+}
+
+.portfolio__subtitle { display: none; }
+.portfolio__pills-desktop { display: none; }
+
+/* ─── Desktop ──────────────────────────────────────────────────── */
+@media (min-width: 1200px) {
+  .portfolio {
+    padding: 96px 120px;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .portfolio__eyebrow { font-size: 11px; letter-spacing: 0.12em; }
+
+  .portfolio__title {
+    font-size: 44px;
+    letter-spacing: -0.01em;
+  }
+
+  .portfolio__subtitle {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--stone);
+    line-height: 1.65;
+    max-width: 520px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .portfolio__pills {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .portfolio__pills-row { display: none; }
+
+  .portfolio__pills-desktop {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Masonry grid */
+  .portfolio__grid--masonry {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .portfolio__col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+  }
+
+  .portfolio__item {
+    width: 100%;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .portfolio__item--full   { height: 540px; }
+  .portfolio__item--tall   { height: 260px; }
+  .portfolio__item--short  { height: 163px; }
+
+  /* Hide 2×2 mobile grid on desktop */
+  .portfolio__grid:not(.portfolio__grid--masonry) { display: none; }
+
+  .portfolio__btn {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    background-color: var(--gold-wash);
+    border: 1.5px solid var(--ink);
+    width: auto;
+    padding: 13px 32px;
+    border-radius: 999px;
+  }
+}
+

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMINA Beauty Salon — Київ</title>
+  <meta name="description" content="LUMINA — витончений beauty-салон у серці Києва. Догляд за обличчям, масаж тіла, манікюр та інші процедури від кращих майстрів.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Shared tokens & reset -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <!-- Components -->
+  <link rel="stylesheet" href="components/navbar/navbar.css">
+  <link rel="stylesheet" href="components/hero/hero.css">
+  <link rel="stylesheet" href="components/works-slider/works-slider.css">
+  <link rel="stylesheet" href="components/stats/stats.css">
+  <link rel="stylesheet" href="components/specialists/specialists.css">
+  <link rel="stylesheet" href="components/services/services.css">
+  <link rel="stylesheet" href="components/portfolio/portfolio.css">
+  <link rel="stylesheet" href="components/faq/faq.css">
+  <link rel="stylesheet" href="components/testimonials/testimonials.css">
+  <link rel="stylesheet" href="components/map/map.css">
+  <link rel="stylesheet" href="components/footer/footer.css">
+</head>
+<body>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  NAVBAR                       ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="#" class="navbar__logo">LUMINA</a>
+
+      <!-- Mobile: hamburger -->
+      <button class="navbar__menu" aria-label="Відкрити меню">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <!-- Desktop: nav links -->
+      <nav class="navbar__desktop-nav" aria-label="Головне меню">
+        <a href="#services" class="navbar__nav-link navbar__nav-link--active">Послуги</a>
+        <a href="#specialists" class="navbar__nav-link">Майстри</a>
+        <a href="#portfolio" class="navbar__nav-link">Галерея</a>
+        <a href="#faq" class="navbar__nav-link">Про нас</a>
+      </nav>
+
+      <!-- Desktop: right side -->
+      <div class="navbar__right">
+        <span class="navbar__phone">+380 44 123 45 67</span>
+        <button class="navbar__book-btn">ЗАБРОНЮВАТИ</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile nav drawer -->
+  <nav class="navbar__mobile-nav" aria-label="Мобільне меню" aria-hidden="true">
+    <a href="#services" class="navbar__mobile-link">Послуги</a>
+    <a href="#specialists" class="navbar__mobile-link">Майстри</a>
+    <a href="#portfolio" class="navbar__mobile-link">Галерея</a>
+    <a href="#faq" class="navbar__mobile-link">Про нас</a>
+    <a href="#contact" class="navbar__mobile-link">Контакти</a>
+  </nav>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  HERO                         ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <section class="hero" id="hero">
+    <div class="hero__content">
+      <span class="hero__eyebrow">BEAUTY SALON · КИЇВ</span>
+      <h1 class="hero__title">Краса — це мистецтво,<br>яке живе у деталях</h1>
+      <div class="hero__divider"></div>
+      <p class="hero__subtitle">Довірте свою красу майстрам, які перетворюють кожен візит на витончений ритуал самодогляду.</p>
+      <div class="hero__rating">
+        <span class="hero__stars">★★★★★</span>
+        <span class="hero__rating-text">4.9 · 500+ клієнтів</span>
+      </div>
+      <div class="hero__cta-group">
+        <button class="hero__cta hero__cta--primary">ЗАБРОНЮВАТИ</button>
+        <button class="hero__cta hero__cta--secondary desktop-only">ПЕРЕГЛЯНУТИ ПОСЛУГИ</button>
+      </div>
+    </div>
+    <!-- Desktop: scroll-down indicator -->
+    <div class="hero__scroll-indicator desktop-only" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  WORKS SLIDER                 ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <section class="works-slider" id="works">
+    <div class="works-slider__header">
+      <span class="works-slider__eyebrow">НАШІ РОБОТИ</span>
+      <h2 class="works-slider__title">Результати, що говорять<br class="desktop-only"> самі за себе</h2>
+      <!-- Desktop: filter as text -->
+      <p class="works-slider__filter-text">Всі&nbsp; · &nbsp;Обличчя&nbsp; · &nbsp;Тіло&nbsp; · &nbsp;Нігті&nbsp; · &nbsp;Волосся</p>
+    </div>
+
+    <!-- Desktop: horizontal before/after slider -->
+    <div class="works-slider__slider-row desktop-only">
+      <button class="nav-arrow nav-arrow--outlined" aria-label="Попередній">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <div class="works-slider__cards">
+        <div class="works-card">
+          <div class="works-card__image-wrap">
+            <div class="works-card__image" style="background-image: url('images/generated-1777444495079.png');"></div>
+            <div class="works-card__overlay"></div>
+            <div class="works-card__divider"></div>
+            <div class="works-card__handle"></div>
+            <span class="works-card__label works-card__label--before">ДО</span>
+            <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
+          </div>
+          <p class="works-card__caption">Догляд за обличчям · від 890 грн</p>
+        </div>
+        <div class="works-card">
+          <div class="works-card__image-wrap">
+            <div class="works-card__image" style="background-image: url('images/generated-1777444517456.png');"></div>
+            <div class="works-card__overlay"></div>
+            <div class="works-card__divider"></div>
+            <div class="works-card__handle"></div>
+            <span class="works-card__label works-card__label--before">ДО</span>
+            <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
+          </div>
+          <p class="works-card__caption">Масаж тіла · від 1 200 грн</p>
+        </div>
+        <div class="works-card">
+          <div class="works-card__image-wrap">
+            <div class="works-card__image" style="background-image: url('images/generated-1777444496602.png');"></div>
+            <div class="works-card__overlay"></div>
+            <div class="works-card__divider"></div>
+            <div class="works-card__handle"></div>
+            <span class="works-card__label works-card__label--before">ДО</span>
+            <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
+          </div>
+          <p class="works-card__caption">Манікюр · від 650 грн</p>
+        </div>
+        <div class="works-card">
+          <div class="works-card__image-wrap">
+            <div class="works-card__image" style="background-image: url('images/generated-1777444498598.png');"></div>
+            <div class="works-card__overlay"></div>
+            <div class="works-card__divider"></div>
+            <div class="works-card__handle"></div>
+            <span class="works-card__label works-card__label--before">ДО</span>
+            <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
+          </div>
+          <p class="works-card__caption">Укладка · від 750 грн</p>
+        </div>
+      </div>
+
+      <button class="nav-arrow nav-arrow--outlined" aria-label="Наступний">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile: filter pills + comparison cards -->
+    <div class="works-slider__mobile-cards mobile-only">
+      <div class="works-slider__pills">
+        <div class="works-slider__pills-row">
+          <button class="pill pill--active">Всі</button>
+          <button class="pill pill--inactive">Обличчя</button>
+          <button class="pill pill--inactive">Тіло</button>
+        </div>
+        <div class="works-slider__pills-row">
+          <button class="pill pill--inactive">Нігті</button>
+          <button class="pill pill--inactive">Волосся</button>
+        </div>
+      </div>
+      <div class="comparison-card" style="background-image: url('images/generated-1777451098735.png');">
+        <div class="comparison-card__before-half"></div>
+        <div class="comparison-card__divider"></div>
+        <div class="comparison-card__handle">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
+            <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
+          </svg>
+        </div>
+        <span class="comparison-card__label comparison-card__label--before">ДО</span>
+        <span class="comparison-card__label comparison-card__label--after">ПІСЛЯ</span>
+      </div>
+      <p class="works-slider__caption">Догляд за обличчям · від 890 грн</p>
+      <div class="comparison-card" style="background-image: url('images/generated-1777451111414.png');">
+        <div class="comparison-card__before-half"></div>
+        <div class="comparison-card__divider"></div>
+        <div class="comparison-card__handle">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
+            <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
+          </svg>
+        </div>
+        <span class="comparison-card__label comparison-card__label--before">ДО</span>
+        <span class="comparison-card__label comparison-card__label--after">ПІСЛЯ</span>
+      </div>
+      <p class="works-slider__caption">Масаж тіла · від 1 200 грн</p>
+      <div class="works-slider__nav">
+        <button class="nav-arrow" aria-label="Попередній">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="nav-arrow" aria-label="Наступний">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  STATS                        ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <section class="stats">
+    <div class="stat-cell">
+      <span class="stat-cell__number">500+</span>
+      <span class="stat-cell__label">ЗАДОВОЛЕНИХ КЛІЄНТІВ</span>
+      <span class="stat-cell__subtitle">За 3 роки в Києві</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-cell__number">5</span>
+      <span class="stat-cell__label">МАЙСТРІВ У КОМАНДІ</span>
+      <span class="stat-cell__subtitle">Призери Ukrainian Beauty Awards 2023</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-cell__number">3</span>
+      <span class="stat-cell__label">РОКИ НА РИНКУ</span>
+      <span class="stat-cell__subtitle">На ринку з 2021 р.</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-cell__number">98%</span>
+      <span class="stat-cell__label">РЕКОМЕНДУЮТЬ НАС</span>
+      <span class="stat-cell__subtitle">За опитуваннями клієнтів</span>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  SPECIALISTS                  ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <section class="specialists" id="specialists">
+    <div class="specialists__header">
+      <span class="specialists__eyebrow">НАША КОМАНДА</span>
+      <h2 class="specialists__title">Майстри своєї справи</h2>
+      <p class="specialists__subtitle">Наші майстри — це справжні художники, які постійно навчаються та вдосконалюють свою майстерність.</p>
+    </div>
+
+    <!-- Desktop: carousel with arrows -->
+    <div class="specialists__carousel desktop-only">
+      <button class="carousel-arrow" aria-label="Попередній">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="specialists__cards-viewport">
+        <div class="specialist-card">
+          <div class="specialist-card__avatar" style="background-image: url('images/generated-1777444515790.png');"></div>
+          <span class="specialist-card__name">Аліна Коваль</span>
+          <span class="specialist-card__role">Косметолог</span>
+          <span class="specialist-card__experience">7+ РОК · #антивіковий · #пілінги</span>
+          <button class="specialist-card__btn">ЗАПИСАТИСЬ ДО АЛІНИ</button>
+        </div>
+        <div class="specialist-card">
+          <div class="specialist-card__avatar" style="background-image: url('images/generated-1777444528344.png');"></div>
+          <span class="specialist-card__name">Марина Петренко</span>
+          <span class="specialist-card__role">Масажист</span>
+          <span class="specialist-card__experience">5+ РОК · #класичний · #лімфодренаж</span>
+          <button class="specialist-card__btn">ЗАПИСАТИСЬ ДО МАРИНИ</button>
+        </div>
+        <div class="specialist-card">
+          <div class="specialist-card__avatar" style="background-image: url('images/generated-1777444511563.png');"></div>
+          <span class="specialist-card__name">Олена Бондар</span>
+          <span class="specialist-card__role">Майстер манікюру</span>
+          <span class="specialist-card__experience">6+ РОК · #гель-лак · #нарощування</span>
+          <button class="specialist-card__btn">ЗАПИСАТИСЬ ДО ОЛЕНИ</button>
+        </div>
+      </div>
+      <button class="carousel-arrow" aria-label="Наступний">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <!-- Desktop: dots & counter -->
+    <div class="specialists__dots desktop-only">
+      <button class="testimonials__dot testimonials__dot--active" aria-label="Майстер 1"></button>
+      <button class="testimonials__dot testimonials__dot--inactive" aria-label="Майстер 2"></button>
+      <button class="testimonials__dot testimonials__dot--inactive" aria-label="Майстер 3"></button>
+      <span class="specialists__counter">МАЙСТЕР 1 З 3</span>
+    </div>
+    <button class="specialists__all-btn desktop-only">УСЯ КОМАНДА →</button>
+
+    <!-- Mobile: stacked cards -->
+    <div class="specialists__mobile-cards mobile-only">
+      <div class="specialist-card">
+        <div class="specialist-card__avatar"></div>
+        <span class="specialist-card__name">Аліна Коваль</span>
+        <span class="specialist-card__tags">Косметолог · #антивіковий · #пілінги</span>
+        <a href="#" class="specialist-card__cta">ЗАПИСАТИСЬ ДО АЛІНИ →</a>
+      </div>
+      <div class="specialist-card">
+        <div class="specialist-card__avatar"></div>
+        <span class="specialist-card__name">Марина Петренко</span>
+        <span class="specialist-card__tags">Масажист · #класичний · #лімфодренаж</span>
+        <a href="#" class="specialist-card__cta">ЗАПИСАТИСЬ ДО МАРИНИ →</a>
+      </div>
+      <div class="specialist-card">
+        <div class="specialist-card__avatar"></div>
+        <span class="specialist-card__name">Олена Бондар</span>
+        <span class="specialist-card__tags">Майстер манікюру · #гель-лак · #нарощування</span>
+        <a href="#" class="specialist-card__cta">ЗАПИСАТИСЬ ДО ОЛЕНИ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  SERVICES                     ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <section class="services" id="services">
+    <div class="services__header">
+      <span class="services__eyebrow">НАШІ ПОСЛУГИ</span>
+      <h2 class="services__title">Ритуали краси для вас</h2>
+    </div>
+    <div class="services__grid">
+      <div class="service-card">
+        <div class="service-card__image" style="background-image: url('images/generated-1777444778180.png');"></div>
+        <div class="service-card__badge">ПОПУЛЯРНЕ</div>
+        <div class="service-card__body">
+          <h3 class="service-card__name">Догляд за обличчям</h3>
+          <p class="service-card__desc">Глибоке зволоження та відновлення шкіри з преміальними засобами.</p>
+          <div class="service-card__meta">
+            <span class="service-card__price">від 850 грн</span>
+            <span class="service-card__duration">60 хв</span>
+          </div>
+          <button class="service-card__cta">ЗАПИСАТИСЬ НА ДОГЛЯД →</button>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card__image" style="background-image: url('images/generated-1777444778673.png');"></div>
+        <div class="service-card__body">
+          <h3 class="service-card__name">Масаж тіла</h3>
+          <p class="service-card__desc">Розслаблюючий або відновлювальний масаж для зняття напруги.</p>
+          <div class="service-card__meta">
+            <span class="service-card__price">від 1 200 грн</span>
+            <span class="service-card__duration">90 хв</span>
+          </div>
+          <button class="service-card__cta">ЗАПИСАТИСЬ НА МАСАЖ →</button>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card__image" style="background-image: url('images/generated-1777444784518.png');"></div>
+        <div class="service-card__body">
+          <h3 class="service-card__name">Манікюр та педикюр</h3>
+          <p class="service-card__desc">Бездоганний догляд за нігтями з покриттям гель-лак або класика.</p>
+          <div class="service-card__meta">
+            <span class="service-card__price">від 550 грн</span>
+            <span class="service-card__duration">75 хв</span>
+          </div>
+          <button class="service-card__cta">ЗАПИСАТИСЬ НА МАНІКЮР →</button>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="services__price-link">Переглянути повний прайс →</a>
+  </section>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  PORTFOLIO                    ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <section class="portfolio" id="portfolio">
+    <div class="portfolio__header">
+      <span class="portfolio__eyebrow">ПОРТФОЛІО</span>
+      <h2 class="portfolio__title">Роботи, які надихають</h2>
+      <p class="portfolio__subtitle">Кожна робота — це унікальна історія краси, створена з увагою та любов'ю до деталей.</p>
+    </div>
+
+    <!-- Desktop: single-row filter pills -->
+    <div class="portfolio__pills-desktop">
+      <button class="pill pill--active">Всі</button>
+      <button class="pill pill--inactive">Обличчя</button>
+      <button class="pill pill--inactive">Масаж</button>
+      <button class="pill pill--inactive">Нігті</button>
+      <button class="pill pill--inactive">Волосся</button>
+    </div>
+
+    <!-- Desktop: 3-column masonry grid -->
+    <div class="portfolio__grid portfolio__grid--masonry desktop-only">
+      <div class="portfolio__col portfolio__col--1">
+        <div class="portfolio__item portfolio__item--full"
+             style="background-image: url('images/generated-1777444504245.png');"></div>
+      </div>
+      <div class="portfolio__col portfolio__col--2">
+        <div class="portfolio__item portfolio__item--tall"
+             style="background-image: url('images/generated-1777444517496.png');"></div>
+        <div class="portfolio__item portfolio__item--tall"
+             style="background-image: url('images/generated-1777444523242.png');"></div>
+      </div>
+      <div class="portfolio__col portfolio__col--3">
+        <div class="portfolio__item portfolio__item--short"
+             style="background-image: url('images/generated-1777445257990.png');"></div>
+        <div class="portfolio__item portfolio__item--short"
+             style="background-image: url('images/generated-1777445257113.png');"></div>
+        <div class="portfolio__item portfolio__item--short"
+             style="background-image: url('images/generated-1777445263257.png');"></div>
+      </div>
+    </div>
+
+    <!-- Mobile: 2×2 grid -->
+    <div class="portfolio__grid mobile-only">
+      <div class="portfolio__grid-row">
+        <div class="portfolio__grid-item" style="background-image: url('images/generated-1777451118098.png');"></div>
+        <div class="portfolio__grid-item" style="background-image: url('images/generated-1777451127052.png');"></div>
+      </div>
+      <div class="portfolio__grid-row">
+        <div class="portfolio__grid-item" style="background-image: url('images/generated-1777451126260.png');"></div>
+        <div class="portfolio__grid-item" style="background-image: url('images/generated-1777451116887.png');"></div>
+      </div>
+    </div>
+
+    <button class="portfolio__btn">ПЕРЕГЛЯНУТИ ВСЕ ПОРТФОЛІО</button>
+  </section>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  FAQ                          ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <section class="faq" id="faq">
+    <div class="faq__header">
+      <span class="faq__eyebrow">ЧАСТІ ПИТАННЯ</span>
+      <h2 class="faq__title">Відповіді на ваші запитання</h2>
+    </div>
+    <div class="faq-item">
+      <button class="faq-item__question" aria-expanded="false">
+        <span class="faq-item__question-text">Скільки коштує запис?</span>
+        <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <p class="faq-item__answer">Вартість послуг починається від 550 грн. Точну ціну можна уточнити у адміністратора або переглянути в повному прайсі на сайті.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-item__question" aria-expanded="false">
+        <span class="faq-item__question-text">Як підготуватись до процедури?</span>
+        <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <p class="faq-item__answer">Для більшості процедур підготовка не потрібна. Для масажу — не їжте за 1–2 години. Для догляду за обличчям — очистіть шкіру від макіяжу перед виходом.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-item__question" aria-expanded="false">
+        <span class="faq-item__question-text">Чи є паркування поруч із салоном?</span>
+        <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <p class="faq-item__answer">Так, поруч є паркування на вул. Хрещатик. Клієнти LUMINA отримують знижку при пред'явленні чека адміністратору.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-item__question" aria-expanded="false">
+        <span class="faq-item__question-text">Можна скасувати або перенести запис?</span>
+        <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <p class="faq-item__answer">Так, скасування або перенесення можливе за 24 години до процедури без штрафних санкцій. Зв'яжіться з нами за телефоном або через форму на сайті.</p>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  REVIEWS / TESTIMONIALS       ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <section class="testimonials" id="reviews">
+    <div class="testimonials__header">
+      <span class="testimonials__eyebrow">ВІДГУКИ КЛІЄНТІВ</span>
+      <h2 class="testimonials__title">Вони нам довіряють</h2>
+    </div>
+
+    <!-- Desktop: rating summary -->
+    <div class="reviews__rating-row">
+      <span class="reviews__rating-score">★ 4.9</span>
+      <span class="reviews__rating-count">· &nbsp;200+ відгуків від клієнтів</span>
+      <span class="reviews__rating-source">· &nbsp;Google Reviews</span>
+    </div>
+
+    <!-- Desktop: 3-column grid -->
+    <div class="reviews__grid">
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span>
+        </div>
+        <p class="testimonial-card__quote">Неймовірна атмосфера. Майстри уважні до деталей, відчуваєш справжню розкіш з першої хвилини.</p>
+        <hr class="testimonial-card__divider">
+        <div class="testimonial-card__client">
+          <div class="testimonial-card__avatar testimonial-card__avatar--initials" style="background-color: var(--champagne);">ІК</div>
+          <div class="testimonial-card__info">
+            <span class="testimonial-card__name">Ірина Коваль</span>
+            <span class="testimonial-card__service">Масаж тіла</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span>
+        </div>
+        <p class="testimonial-card__quote">Приходжу вже два роки. Завжди задоволена результатом і сервісом найвищого рівня.</p>
+        <hr class="testimonial-card__divider">
+        <div class="testimonial-card__client">
+          <div class="testimonial-card__avatar testimonial-card__avatar--initials" style="background-color: var(--champagne);">ОМ</div>
+          <div class="testimonial-card__info">
+            <span class="testimonial-card__name">Ольга Мельник</span>
+            <span class="testimonial-card__service">Догляд за обличчям</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span>
+        </div>
+        <p class="testimonial-card__quote">Справжній ритуал краси. Персонал знає свою справу досконально, рекомендую всім подругам.</p>
+        <hr class="testimonial-card__divider">
+        <div class="testimonial-card__client">
+          <div class="testimonial-card__avatar testimonial-card__avatar--initials" style="background-color: var(--champagne);">МС</div>
+          <div class="testimonial-card__info">
+            <span class="testimonial-card__name">Марія Савченко</span>
+            <span class="testimonial-card__service">Манікюр та педикюр</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile: single testimonial card -->
+    <div class="testimonial-card mobile-only">
+      <div class="testimonial-card__stars">
+        <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+        <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+        <span class="testimonial-card__star">★</span>
+      </div>
+      <p class="testimonial-card__quote">Найкращий салон у місті. Майстри уважні до деталей, атмосфера чудова — повертаюсь сюди знову і знову.</p>
+      <hr class="testimonial-card__divider">
+      <div class="testimonial-card__client">
+        <div class="testimonial-card__avatar"></div>
+        <div class="testimonial-card__info">
+          <span class="testimonial-card__name">Ольга Мельник</span>
+          <span class="testimonial-card__service">Догляд за обличчям</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials__dots">
+      <button class="testimonials__dot testimonials__dot--active" aria-label="Відгук 1"></button>
+      <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 2"></button>
+      <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 3"></button>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  MAP / CONTACT                ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <section class="map-section" id="contact">
+    <div class="map-section__info">
+      <span class="map-section__eyebrow">ЯК НАС ЗНАЙТИ</span>
+      <h2 class="map-section__title">Ми знаходимось<br>у серці Києва</h2>
+      <hr class="map-section__divider">
+      <div class="map-section__details">
+        <div class="map-section__detail-row">
+          <svg class="map-section__detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="map-section__detail-text">вул. Хрещатик, 10<br>Київ, 01001</span>
+        </div>
+        <div class="map-section__detail-row">
+          <svg class="map-section__detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14 19.79 19.79 0 0 1 1.61 5.42 2 2 0 0 1 3.59 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="map-section__detail-text">+380 44 123 45 67</span>
+        </div>
+        <div class="map-section__detail-row">
+          <svg class="map-section__detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="map-section__detail-text">Пн–Пт: 9:00 — 20:00<br>Сб–Нд: 10:00 — 18:00</span>
+        </div>
+      </div>
+      <a href="#" class="map-section__route">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+        Прокласти маршрут →
+      </a>
+      <a href="#" class="map-section__cta">ЗАПИСАТИСЬ ОНЛАЙН →</a>
+    </div>
+
+    <!-- Desktop: map with pin -->
+    <div class="map-section__map-wrapper desktop-only">
+      <div class="map-section__image"></div>
+      <div class="map-section__pin">
+        <svg class="map-section__pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="map-section__pin-label">LUMINA</div>
+      </div>
+    </div>
+
+    <!-- Mobile: simple map image -->
+    <div class="map-section__image mobile-only"></div>
+  </section>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  FOOTER                       ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <footer class="footer">
+    <!-- 4-column main (desktop) / stacked (mobile) -->
+    <div class="footer__main">
+      <div class="footer__brand">
+        <span class="footer__logo">LUMINA</span>
+        <p class="footer__tagline">Витончений простір для краси та відновлення у серці Києва. Запрошуємо вас до ритуалу самодогляду.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="footer__social-link" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Desktop columns (hidden on mobile) -->
+      <div class="footer__col desktop-only">
+        <span class="footer__col-title">ПОСЛУГИ</span>
+        <a href="#" class="footer__col-link">Догляд за обличчям</a>
+        <a href="#" class="footer__col-link">Масаж тіла</a>
+        <a href="#" class="footer__col-link">Манікюр та педикюр</a>
+        <a href="#" class="footer__col-link">Брови та вії</a>
+        <a href="#" class="footer__col-link">Укладка та стрижка</a>
+      </div>
+      <div class="footer__col desktop-only">
+        <span class="footer__col-title">САЛОН</span>
+        <a href="#" class="footer__col-link footer__col-link--highlight">Записатись онлайн →</a>
+        <a href="#" class="footer__col-link">Про нас</a>
+        <a href="#" class="footer__col-link">Наші майстри</a>
+        <a href="#" class="footer__col-link">Галерея</a>
+        <a href="#" class="footer__col-link">Акції та знижки</a>
+      </div>
+      <div class="footer__col desktop-only">
+        <span class="footer__col-title">КОНТАКТИ</span>
+        <span class="footer__col-link">вул. Хрещатик, 10, Київ</span>
+        <span class="footer__col-link">+380 44 123 45 67</span>
+        <span class="footer__col-link">lumina@beauty.ua</span>
+        <span class="footer__col-link">Пн–Пт: 9:00 — 20:00</span>
+      </div>
+    </div>
+
+    <!-- Mobile: nav links -->
+    <nav class="footer__nav mobile-only">
+      <a href="#" class="footer__nav-link">Головна</a>
+      <a href="#" class="footer__nav-link">Послуги</a>
+      <a href="#" class="footer__nav-link">Майстри</a>
+      <a href="#" class="footer__nav-link">Контакти</a>
+    </nav>
+    <div class="footer__contact mobile-only">
+      <span class="footer__contact-item">Київ, вул. Хрещатик, 12</span>
+      <span class="footer__contact-item">+380 44 123 45 67</span>
+      <span class="footer__contact-item">hello@lumina.ua</span>
+    </div>
+
+    <!-- Desktop: newsletter row -->
+    <div class="footer__newsletter">
+      <span class="footer__newsletter-text">Підпишіться на ексклюзивні пропозиції LUMINA</span>
+      <div class="footer__newsletter-form">
+        <input class="footer__newsletter-input" type="email" placeholder="Ваш email" aria-label="Email для підписки">
+        <button class="footer__newsletter-btn">Підписатись</button>
+      </div>
+    </div>
+
+    <hr class="footer__divider">
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2026 LUMINA Beauty Salon. Всі права захищені.</p>
+      <div class="footer__legal">
+        <a href="#" class="footer__legal-link">Політика конфіденційності</a>
+        <a href="#" class="footer__legal-link">Умови використання</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  FLOATING BOOKING BUTTON      ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <a href="#contact" class="float-btn" aria-label="Записатись">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/>
+    </svg>
+    <span>Записатись</span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

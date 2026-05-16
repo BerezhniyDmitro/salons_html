@@ -1,0 +1,54 @@
+/* ─── Shared reusable component styles ─────────────────────────── */
+
+/* ── Pill filter button ─────────────────────────────────────────── */
+.pill {
+  font-family: var(--font-body);
+  font-size: 12px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.pill--active {
+  background-color: var(--champagne);
+  color: var(--ink);
+  font-weight: 500;
+  border: none;
+}
+
+.pill--inactive {
+  background: transparent;
+  color: var(--stone);
+  border: 1px solid var(--sand);
+  font-weight: 400;
+}
+
+.pill--inactive:hover {
+  border-color: var(--champagne);
+  color: var(--champagne);
+}
+
+/* ── Carousel nav arrow ─────────────────────────────────────────── */
+.nav-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-arrow--outlined {
+  background: rgba(28, 25, 23, 0.6);
+  border: 1px solid var(--champagne);
+  color: var(--champagne);
+}
+
+.nav-arrow--outlined:hover {
+  background: rgba(200, 169, 110, 0.15);
+}

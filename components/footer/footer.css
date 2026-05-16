@@ -1,0 +1,302 @@
+.footer {
+  background-color: var(--charcoal);
+  padding: 36px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--champagne);
+  letter-spacing: -0.01em;
+}
+
+.footer__tagline {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--stone);
+  line-height: 1.5;
+  width: 100%;
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__nav-link {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--sand);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer__nav-link:hover {
+  color: var(--champagne);
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__contact-item {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--stone);
+}
+
+.footer__socials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer__social-link {
+  width: 24px;
+  height: 24px;
+  color: var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.footer__social-link:hover {
+  color: var(--champagne);
+}
+
+.footer__social-link svg {
+  width: 24px;
+  height: 24px;
+}
+
+.footer__divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 100%;
+}
+
+.footer__copyright {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--stone);
+  text-align: center;
+  width: 100%;
+}
+
+/* ─── Desktop ──────────────────────────────────────────────────── */
+.footer__main       { display: flex; flex-direction: column; gap: 28px; }
+.footer__col        { display: flex; flex-direction: column; gap: 14px; }
+.footer__col-title  { display: none; }
+.footer__newsletter { display: none; }
+.footer__legal      { display: none; }
+
+@media (min-width: 1200px) {
+  .footer {
+    padding: 0;
+    gap: 0;
+  }
+
+  /* ── Main 4-column row ── */
+  .footer__main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 64px 120px 48px;
+    gap: 48px;
+  }
+
+  .footer__brand {
+    width: 320px;
+    flex-shrink: 0;
+  }
+
+  .footer__logo { font-size: 26px; }
+
+  .footer__tagline {
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 300px;
+  }
+
+  .footer__socials {
+    gap: 12px;
+  }
+
+  .footer__social-link {
+    width: 36px;
+    height: 36px;
+    background: var(--graphite);
+    border-radius: 50%;
+  }
+
+  /* Footer nav is hidden on desktop in favour of column links */
+  .footer__nav { display: none; }
+
+  /* ── Columns ── */
+  .footer__col { width: auto; }
+
+  .footer__col-title {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--champagne);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .footer__col-link {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--stone);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: block;
+  }
+
+  .footer__col-link:hover { color: var(--champagne); }
+
+  .footer__col-link--highlight {
+    color: var(--champagne);
+    font-weight: 600;
+  }
+
+  /* Mobile contact block hidden in favour of col */
+  .footer__contact { display: none; }
+
+  /* ── Newsletter row ── */
+  .footer__newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 120px;
+    border-top: 1px solid var(--graphite);
+  }
+
+  .footer__newsletter-text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--stone);
+  }
+
+  .footer__newsletter-form {
+    display: flex;
+    border: 1px solid var(--graphite);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .footer__newsletter-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--stone);
+    min-width: 200px;
+  }
+
+  .footer__newsletter-btn {
+    background: var(--champagne);
+    border: none;
+    border-radius: 999px;
+    padding: 10px 24px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .footer__newsletter-btn:hover { opacity: 0.9; }
+
+  /* ── Bottom bar ── */
+  .footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 120px;
+  }
+
+  .footer__legal {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer__legal-link {
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: var(--stone);
+    text-decoration: none;
+  }
+
+  .footer__legal-link:hover { color: var(--champagne); }
+}
+
+/* ─── Floating booking button (desktop only) ─────────────────── */
+.float-btn {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .float-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    bottom: 32px;
+    right: 40px;
+    z-index: 999;
+    background: linear-gradient(180deg, var(--champagne), var(--gold-soft));
+    border-radius: 999px;
+    padding: 16px 28px;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    box-shadow: 0 8px 24px rgba(28,25,23,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.3s, transform 0.3s, box-shadow 0.2s;
+  }
+
+  .float-btn--visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .float-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(28,25,23,0.35);
+  }
+
+  .float-btn svg { width: 18px; height: 18px; }
+}

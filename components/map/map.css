@@ -1,0 +1,218 @@
+.map-section {
+  background-color: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.map-section__info {
+  background-color: var(--ink);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.map-section__eyebrow {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--champagne);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.map-section__title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ivory);
+  line-height: 1.2;
+  width: 100%;
+}
+
+.map-section__divider {
+  width: 40px;
+  height: 1px;
+  background-color: var(--champagne);
+  border: none;
+}
+
+.map-section__address,
+.map-section__phone,
+.map-section__hours {
+  font-family: var(--font-body);
+  color: var(--stone);
+}
+
+.map-section__address,
+.map-section__phone {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.map-section__hours {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.map-section__route {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--champagne);
+  cursor: pointer;
+}
+
+.map-section__route:hover {
+  opacity: 0.8;
+}
+
+.map-section__cta {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.06em;
+  background: var(--gradient-gold);
+  border-radius: 999px;
+  border: none;
+  width: 100%;
+  padding: 14px 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  text-align: center;
+  display: block;
+}
+
+.map-section__cta:hover {
+  opacity: 0.9;
+}
+
+.map-section__image {
+  height: 260px;
+  background-image: url('../../images/generated-1777451031852.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Mobile defaults (must be before desktop media query) */
+.map-section__map-wrapper { display: none; }
+
+/* ─── Desktop ──────────────────────────────────────────────────── */
+@media (min-width: 1200px) {
+  .map-section {
+    flex-direction: row;
+    height: 520px;
+  }
+
+  .map-section__info {
+    width: 480px;
+    flex-shrink: 0;
+    padding: 26px 56px;
+    gap: 32px;
+    height: 100%;
+  }
+
+  .map-section__eyebrow { font-size: 11px; letter-spacing: 0.12em; }
+
+  .map-section__title {
+    font-size: 36px;
+    letter-spacing: -0.01em;
+  }
+
+  .map-section__details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .map-section__detail-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .map-section__detail-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--champagne);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .map-section__detail-text {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--sand);
+    line-height: 1.6;
+  }
+
+  .map-section__route {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .map-section__cta {
+    width: fit-content;
+    padding: 14px 32px;
+  }
+
+  /* Replace simple image with map wrapper (desktop) */
+  .map-section__map-wrapper {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .map-section__map-wrapper .map-section__image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    background-image: url('../../images/generated-1777450071512.png');
+  }
+
+  .map-section__pin {
+    position: absolute;
+    left: 380px;
+    top: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    z-index: 2;
+  }
+
+  .map-section__pin-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--champagne);
+  }
+
+  .map-section__pin-label {
+    background: var(--ink);
+    color: var(--champagne);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+
+  /* Mobile-only simple image hidden on desktop */
+  .map-section__image.mobile-only { display: none !important; }
+}
+
+/* Mobile: keep details simple */
+.map-section__details { display: flex; flex-direction: column; gap: 16px; }
+.map-section__detail-row { display: flex; align-items: flex-start; gap: 12px; }
+.map-section__detail-icon { width: 16px; height: 16px; color: var(--champagne); flex-shrink: 0; margin-top: 2px; }
+.map-section__detail-text { font-family: var(--font-body); font-size: 13px; color: var(--stone); line-height: 1.6; }

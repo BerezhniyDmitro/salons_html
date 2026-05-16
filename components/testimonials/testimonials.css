@@ -1,0 +1,208 @@
+.testimonials {
+  background-color: var(--cream);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.testimonials__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 4px;
+  text-align: center;
+}
+
+.testimonials__eyebrow {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--champagne);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.testimonials__title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink);
+  text-align: center;
+}
+
+.testimonial-card {
+  background-color: var(--ivory);
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--pearl);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.testimonial-card__stars {
+  display: flex;
+  gap: 4px;
+}
+
+.testimonial-card__star {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--champagne);
+  line-height: 1;
+}
+
+.testimonial-card__quote {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--charcoal);
+  line-height: 1.65;
+  width: 100%;
+}
+
+.testimonial-card__divider {
+  height: 1px;
+  background-color: var(--pearl);
+  border: none;
+  width: 100%;
+}
+
+.testimonial-card__client {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-card__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--gold-soft);
+  flex-shrink: 0;
+}
+
+.testimonial-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonial-card__name {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.testimonial-card__service {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--stone);
+}
+
+.testimonials__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.testimonials__dot {
+  border-radius: 50%;
+  background-color: var(--pearl);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.testimonials__dot--active {
+  width: 8px;
+  height: 8px;
+  background-color: var(--champagne);
+}
+
+.testimonials__dot--inactive {
+  width: 8px;
+  height: 8px;
+}
+
+/* ─── Reviews section (desktop 3-column) ──────────────────────── */
+.reviews__rating-row { display: none; }
+.reviews__grid       { display: none; }
+
+@media (min-width: 1200px) {
+  /* Section wrapper */
+  .testimonials {
+    padding: 96px 120px;
+    gap: 48px;
+  }
+
+  .testimonials__header { width: 100%; gap: 12px; }
+
+  .testimonials__eyebrow { font-size: 11px; letter-spacing: 0.12em; }
+
+  .testimonials__title { font-size: 44px; letter-spacing: -0.01em; }
+
+  /* Rating summary row */
+  .reviews__rating-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .reviews__rating-score {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--champagne);
+  }
+
+  .reviews__rating-count,
+  .reviews__rating-source {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--stone);
+  }
+
+  .reviews__rating-source { color: var(--champagne); font-weight: 500; }
+
+  /* 3-column review grid */
+  .reviews__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+  }
+
+  /* Override single-card mobile layout */
+  .testimonial-card.mobile-only { display: none !important; }
+
+  /* Card inside the grid */
+  .reviews__grid .testimonial-card {
+    padding: 28px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    border: 1px solid var(--pearl);
+  }
+
+  /* Desktop avatar: initials circle (set via HTML) */
+  .testimonial-card__avatar--initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+}
