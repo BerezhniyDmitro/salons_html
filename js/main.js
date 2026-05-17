@@ -59,33 +59,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─── Specialists carousel ──────────────────────────────────────
   initCarousel({
     wrap: '.specialists__carousel',
-    viewport: '.specialists__cards-viewport',
+    viewport: '.specialists__track',
     item: '.specialist-card',
     prevBtn: '[aria-label="Попередній"]',
     nextBtn: '[aria-label="Наступний"]',
   });
 
-  // ─── Works slider carousel ─────────────────────────────────────
+  // ─── Testimonials carousel (desktop) ───────────────────────────
   initCarousel({
-    wrap: '.works-slider__carousel',
-    viewport: '.works-slider__track',
-    item: '.works-card',
-    prevBtn: '.nav-arrow:first-child',
-    nextBtn: '.nav-arrow:last-child',
+    wrap: '.testimonials__carousel',
+    viewport: '.reviews__grid',
+    item: '.testimonial-card',
+    prevBtn: '[aria-label="Попередній"]',
+    nextBtn: '[aria-label="Наступний"]',
   });
-
-  // ─── Works slider mobile nav ────────────────────────────────────
-  const worksTrack = document.querySelector('.works-slider__track');
-  const worksNav = document.querySelector('.works-slider__nav');
-  if (worksTrack && worksNav) {
-    const getStep = () => {
-      const item = worksTrack.querySelector('.works-card');
-      if (!item) return 280;
-      return item.offsetWidth + parseInt(getComputedStyle(worksTrack).columnGap || getComputedStyle(worksTrack).gap || 0);
-    };
-    worksNav.querySelector('[aria-label="Попередній"]')?.addEventListener('click', () => worksTrack.scrollBy({ left: -getStep(), behavior: 'smooth' }));
-    worksNav.querySelector('[aria-label="Наступний"]')?.addEventListener('click', () => worksTrack.scrollBy({ left: getStep(), behavior: 'smooth' }));
-  }
 
   function initCarousel({ wrap: wrapSel, viewport: viewportSel, item: itemSel, prevBtn: prevSel, nextBtn: nextSel }) {
     const wrap = document.querySelector(wrapSel);
@@ -103,22 +90,123 @@ document.addEventListener('DOMContentLoaded', () => {
       return item.offsetWidth + parseInt(getComputedStyle(viewport).columnGap || getComputedStyle(viewport).gap || 0);
     };
 
-    prev.addEventListener('click', () => viewport.scrollBy({ left: -getStep(), behavior: 'smooth' }));
-    next.addEventListener('click', () => viewport.scrollBy({ left: getStep(), behavior: 'smooth' }));
+    const maxScroll = () => viewport.scrollWidth - viewport.clientWidth;
+
+    prev.addEventListener('click', () => {
+      if (viewport.scrollLeft <= 1) {
+        viewport.scrollTo({ left: maxScroll(), behavior: 'smooth' });
+      } else {
+        viewport.scrollBy({ left: -getStep(), behavior: 'smooth' });
+      }
+    });
+    next.addEventListener('click', () => {
+      if (viewport.scrollLeft >= maxScroll() - 1) {
+        viewport.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        viewport.scrollBy({ left: getStep(), behavior: 'smooth' });
+      }
+    });
   }
 
   // ─── Testimonials dots (mobile) ────────────────────────────────
   const dots = document.querySelectorAll('.testimonials__dot');
   const cards = document.querySelectorAll('.reviews__grid .testimonial-card');
   if (dots.length && cards.length) {
+    const dotsContainer = dots[0]?.parentElement;
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
-        if (getComputedStyle(dot.parentElement).display === 'none') return;
+        if (dotsContainer && getComputedStyle(dotsContainer).display === 'none') return;
         cards.forEach((c, j) => { c.style.display = j === i ? 'flex' : 'none'; });
         dots.forEach(d => { d.classList.toggle('testimonials__dot--active', d === dot); d.classList.toggle('testimonials__dot--inactive', d !== dot); });
       });
     });
   }
+
+  // ─── Booking modal ─────────────────────────────────────────────
+  const bookingModal = document.getElementById('booking-modal');
+  if (bookingModal) {
+    const modalBody = bookingModal.querySelector('.booking-modal__body');
+    const form = bookingModal.querySelector('.booking-modal__form');
+    const errorEl = bookingModal.querySelector('.booking-modal__error');
+
+    const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
+
+    function openModal() {
+      bookingModal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      const first = bookingModal.querySelector(FOCUSABLE);
+      first?.focus();
+    }
+
+    function closeModal() {
+      bookingModal.classList.remove('is-open');
+      document.body.style.overflow = '';
+      modalBody.classList.remove('booking-modal__body--success', 'booking-modal__body--submitting', 'booking-modal__body--error');
+      form?.reset();
+    }
+
+    document.querySelectorAll('[data-booking-open]').forEach(btn => {
+      btn.addEventListener('click', openModal);
+    });
+
+    document.querySelectorAll('[data-booking-close]').forEach(btn => {
+      btn.addEventListener('click', closeModal);
+    });
+
+    bookingModal.addEventListener('click', e => {
+      if (e.target === bookingModal) closeModal();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && bookingModal.classList.contains('is-open')) closeModal();
+    });
+
+    // focus trap
+    bookingModal.addEventListener('keydown', e => {
+      if (e.key !== 'Tab' || !bookingModal.classList.contains('is-open')) return;
+      const focusable = [...bookingModal.querySelectorAll(FOCUSABLE)];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+
+    form?.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const phone = form.phone.value.trim();
+      const service = form.service.value;
+      const consent = form.consent.checked;
+
+      if (!name || !phone || !service || !consent) {
+        modalBody.classList.add('booking-modal__body--error');
+        return;
+      }
+      modalBody.classList.remove('booking-modal__body--error');
+      modalBody.classList.add('booking-modal__body--submitting');
+      form.querySelector('.booking-modal__submit').disabled = true;
+
+      console.log('Booking submit:', { name, phone, service, master: form.master?.value, date: form.date?.value, comment: form.comment?.value });
+
+      setTimeout(() => {
+        modalBody.classList.remove('booking-modal__body--submitting');
+        modalBody.classList.add('booking-modal__body--success');
+        form.querySelector('.booking-modal__submit').disabled = false;
+      }, 800);
+    });
+  }
+
+  // ─── Lang switcher (UI stub) ────────────────────────────────────
+  document.querySelectorAll('.lang-switcher__btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      document.querySelectorAll(`.lang-switcher__btn[data-lang="${lang}"]`).forEach(b => b.setAttribute('aria-pressed', 'true'));
+      document.querySelectorAll(`.lang-switcher__btn:not([data-lang="${lang}"])`).forEach(b => b.setAttribute('aria-pressed', 'false'));
+    });
+  });
 
   // ─── Mobile hamburger menu ──────────────────────────────────────
   const menuBtn = document.querySelector('.navbar__menu');

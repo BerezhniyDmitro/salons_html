@@ -14,11 +14,12 @@
 - Шрифти — Google Fonts (Cormorant Garamond + Outfit), уже під'єднані в `index.html`.
 - SVG — інлайн в HTML (без іконкових бібліотек).
 - Локальний сервер: `python3 -m http.server 8765`.
+- Фреймворк Alpine допускається для використання
 
 **Чого НЕ використовуємо:**
 - Жодних бандлерів (Vite, webpack, Parcel).
 - Жодних препроцесорів (Sass, Less, PostCSS).
-- Жодних фреймворків (React, Vue, Alpine).
+- Жодних фреймворків (React, Vue).
 - Жодних CSS-фреймворків (Tailwind, Bootstrap).
 - Жодних package.json / node_modules — їх немає і не повинно з'явитися.
 

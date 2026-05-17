@@ -57,3 +57,33 @@
 .nav-arrow--outlined:hover {
   background: rgba(200, 169, 110, 0.15);
 }
+
+/* ── Carousel arrow (shared) ────────────────────────────────────── */
+.carousel-arrow { display: none; }
+
+@media (min-width: 1200px) {
+  .carousel-arrow {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .carousel-arrow:hover {
+    background: var(--charcoal);
+    transform: scale(1.05);
+  }
+
+  .carousel-arrow svg {
+    width: 20px;
+    height: 20px;
+    color: var(--ivory);
+  }
+}

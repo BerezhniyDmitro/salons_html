@@ -117,12 +117,33 @@
   color: var(--stone);
 }
 
+.testimonials__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
 .testimonials__dots {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-top: 24px;
+}
+
+.testimonials__google-link {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--champagne);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s;
+}
+
+.testimonials__google-link:hover {
+  opacity: 0.75;
 }
 
 .testimonials__dot {
@@ -141,6 +162,10 @@
 }
 
 .reviews__rating-row { display: none; }
+
+.testimonials__carousel {
+  width: 100%;
+}
 
 .reviews__grid {
   display: block;
@@ -185,24 +210,59 @@
 
   .reviews__rating-source { color: var(--champagne); font-weight: 500; }
 
+  .testimonials__carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .testimonials__carousel .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .testimonials__carousel .carousel-arrow[aria-label="Попередній"] {
+    left: -26px;
+  }
+
+  .testimonials__carousel .carousel-arrow[aria-label="Наступний"] {
+    right: -26px;
+  }
+
+  .testimonials__carousel .carousel-arrow:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+
   .reviews__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: row;
     gap: 24px;
     width: 100%;
     padding: 0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
+
+  .reviews__grid::-webkit-scrollbar { display: none; }
 
   .reviews__grid .testimonial-card:not(:first-child) { display: flex; }
 
   .reviews__grid .testimonial-card {
+    flex-shrink: 0;
+    width: calc((100% - 48px) / 3);
     padding: 28px;
     border-radius: 20px;
     background-color: var(--ivory);
     border: 1px solid var(--pearl);
   }
 
+  .testimonials__footer { flex-direction: row; justify-content: space-between; align-items: center; }
   .testimonials__dots { display: none; }
+  .testimonials__google-link { font-size: 13px; }
 
   .testimonial-card__quote {
     font-family: var(--font-body);

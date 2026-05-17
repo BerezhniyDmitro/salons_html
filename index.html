@@ -8,24 +8,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <!-- Shared tokens & reset -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/components.css?v=3">
   <!-- Components -->
   <link rel="stylesheet" href="components/navbar/navbar.css">
   <link rel="stylesheet" href="components/hero/hero.css">
-  <link rel="stylesheet" href="components/works-slider/works-slider.css">
-  <link rel="stylesheet" href="components/stats/stats.css">
-  <link rel="stylesheet" href="components/specialists/specialists.css">
+  <link rel="stylesheet" href="components/stats/stats.css?v=2">
+  <link rel="stylesheet" href="components/specialists/specialists.css?v=2">
   <link rel="stylesheet" href="components/services/services.css">
   <link rel="stylesheet" href="components/portfolio/portfolio.css">
   <link rel="stylesheet" href="components/faq/faq.css">
-  <link rel="stylesheet" href="components/testimonials/testimonials.css">
+  <link rel="stylesheet" href="components/testimonials/testimonials.css?v=3">
   <link rel="stylesheet" href="components/map/map.css">
-  <link rel="stylesheet" href="components/footer/footer.css">
+  <link rel="stylesheet" href="components/footer/footer.css?v=2">
   <link rel="stylesheet" href="components/float-btn/float-btn.css">
+  <link rel="stylesheet" href="components/booking-modal/booking-modal.css">
 </head>
 <body>
 
@@ -55,14 +55,24 @@
 
       <!-- Desktop: right side -->
       <div class="navbar__right">
+        <div class="lang-switcher" role="group" aria-label="Мова сайту">
+          <button class="lang-switcher__btn" data-lang="uk" aria-pressed="true">UA</button>
+          <button class="lang-switcher__btn" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-switcher__btn" data-lang="ru" aria-pressed="false">RU</button>
+        </div>
         <span class="navbar__phone">+380 44 123 45 67</span>
-        <button class="navbar__book-btn">ЗАБРОНЮВАТИ</button>
+        <button class="navbar__book-btn" data-booking-open>ЗАПИСАТИСЬ</button>
       </div>
     </div>
   </nav>
 
   <!-- Mobile nav drawer -->
   <nav class="navbar__mobile-nav" aria-label="Мобільне меню" aria-hidden="true">
+    <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Мова сайту">
+      <button class="lang-switcher__btn" data-lang="uk" aria-pressed="true">UA</button>
+      <button class="lang-switcher__btn" data-lang="en" aria-pressed="false">EN</button>
+      <button class="lang-switcher__btn" data-lang="ru" aria-pressed="false">RU</button>
+    </div>
     <a href="#services" class="navbar__mobile-link">Послуги</a>
     <a href="#specialists" class="navbar__mobile-link">Майстри</a>
     <a href="#portfolio" class="navbar__mobile-link">Галерея</a>
@@ -81,7 +91,7 @@
       <div class="hero__divider"></div>
       <p class="hero__subtitle">Довірте свою красу майстрам, які перетворюють кожен візит на витончений ритуал самодогляду.</p>
       <div class="hero__cta-group">
-        <button class="hero__cta hero__cta--primary">ЗАБРОНЮВАТИ</button>
+        <button class="hero__cta hero__cta--primary" data-booking-open>ЗАПИСАТИСЬ</button>
       </div>
     </div>
     <!-- Desktop: scroll-down indicator -->
@@ -93,140 +103,34 @@
   </section>
 
   <!-- ╔══════════════════════════════╗ -->
-  <!-- ║  WORKS SLIDER                 ║ -->
-  <!-- ╚══════════════════════════════╝ -->
-  <section class="works-slider" id="works">
-    <div class="works-slider__header">
-      <span class="works-slider__eyebrow">НАШІ РОБОТИ</span>
-      <h2 class="works-slider__title">Результати, що говорять самі за себе</h2>
-      <p class="works-slider__filter-text">Всі&nbsp; · &nbsp;Обличчя&nbsp; · &nbsp;Тіло&nbsp; · &nbsp;Нігті&nbsp; · &nbsp;Волосся</p>
-    </div>
-
-    <!-- Pills: горизонтальний скрол на мобілці, приховані на десктопі -->
-    <div class="works-slider__pills">
-      <button class="pill pill--active">Всі</button>
-      <button class="pill pill--inactive">Обличчя</button>
-      <button class="pill pill--inactive">Тіло</button>
-      <button class="pill pill--inactive">Нігті</button>
-      <button class="pill pill--inactive">Волосся</button>
-    </div>
-
-    <!-- Carousel: стрілки по боках на десктопі, track вертикальний/горизонтальний -->
-    <div class="works-slider__carousel">
-      <button class="nav-arrow nav-arrow--outlined" aria-label="Попередній">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
-      </button>
-
-      <div class="works-slider__track">
-        <div class="works-card">
-          <div class="works-card__image-wrap">
-            <div class="works-card__image" style="background-image: url('images/generated-1777444495079.png');"></div>
-            <div class="works-card__overlay"></div>
-            <div class="works-card__divider"></div>
-            <div class="works-card__handle">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
-                <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
-              </svg>
-            </div>
-            <span class="works-card__label works-card__label--before">ДО</span>
-            <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
-          </div>
-          <p class="works-card__caption">Догляд за обличчям · від 890 грн</p>
-        </div>
-        <div class="works-card">
-          <div class="works-card__image-wrap">
-            <div class="works-card__image" style="background-image: url('images/generated-1777444517456.png');"></div>
-            <div class="works-card__overlay"></div>
-            <div class="works-card__divider"></div>
-            <div class="works-card__handle">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
-                <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
-              </svg>
-            </div>
-            <span class="works-card__label works-card__label--before">ДО</span>
-            <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
-          </div>
-          <p class="works-card__caption">Масаж тіла · від 1 200 грн</p>
-        </div>
-        <div class="works-card">
-          <div class="works-card__image-wrap">
-            <div class="works-card__image" style="background-image: url('images/generated-1777444496602.png');"></div>
-            <div class="works-card__overlay"></div>
-            <div class="works-card__divider"></div>
-            <div class="works-card__handle">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
-                <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
-              </svg>
-            </div>
-            <span class="works-card__label works-card__label--before">ДО</span>
-            <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
-          </div>
-          <p class="works-card__caption">Манікюр · від 650 грн</p>
-        </div>
-        <div class="works-card">
-          <div class="works-card__image-wrap">
-            <div class="works-card__image" style="background-image: url('images/generated-1777444498598.png');"></div>
-            <div class="works-card__overlay"></div>
-            <div class="works-card__divider"></div>
-            <div class="works-card__handle">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="9" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/>
-                <circle cx="15" cy="5" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="15" cy="19" r="1.5"/>
-              </svg>
-            </div>
-            <span class="works-card__label works-card__label--before">ДО</span>
-            <span class="works-card__label works-card__label--after">ПІСЛЯ</span>
-          </div>
-          <p class="works-card__caption">Укладка · від 750 грн</p>
-        </div>
-      </div>
-
-      <button class="nav-arrow nav-arrow--outlined" aria-label="Наступний">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Мобільна навігація (центрована під track) -->
-    <div class="works-slider__nav">
-      <button class="nav-arrow" aria-label="Попередній">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="nav-arrow" aria-label="Наступний">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-    </div>
-  </section>
-
-  <!-- ╔══════════════════════════════╗ -->
   <!-- ║  STATS                        ║ -->
   <!-- ╚══════════════════════════════╝ -->
   <section class="stats">
-    <div class="stat-cell">
-      <span class="stat-cell__number">500+</span>
-      <span class="stat-cell__label">ЗАДОВОЛЕНИХ КЛІЄНТІВ</span>
-      <span class="stat-cell__subtitle">За 3 роки в Києві</span>
+    <div class="stats__header">
+      <span class="stats__eyebrow">LUMINA У ЦИФРАХ</span>
+      <h2 class="stats__title">Досягнення, якими пишаємось</h2>
     </div>
-    <div class="stat-cell">
-      <span class="stat-cell__number">5</span>
-      <span class="stat-cell__label">МАЙСТРІВ У КОМАНДІ</span>
-      <span class="stat-cell__subtitle">Призери Ukrainian Beauty Awards 2023</span>
-    </div>
-    <div class="stat-cell">
-      <span class="stat-cell__number">3</span>
-      <span class="stat-cell__label">РОКИ НА РИНКУ</span>
-      <span class="stat-cell__subtitle">На ринку з 2021 р.</span>
-    </div>
-    <div class="stat-cell">
-      <span class="stat-cell__number">98%</span>
-      <span class="stat-cell__label">РЕКОМЕНДУЮТЬ НАС</span>
-      <span class="stat-cell__subtitle">За опитуваннями клієнтів</span>
+    <div class="stats__grid">
+      <div class="stat-cell">
+        <span class="stat-cell__number">500+</span>
+        <span class="stat-cell__label">ЗАДОВОЛЕНИХ КЛІЄНТІВ</span>
+        <span class="stat-cell__subtitle">За 3 роки в Києві</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-cell__number">5</span>
+        <span class="stat-cell__label">МАЙСТРІВ У КОМАНДІ</span>
+        <span class="stat-cell__subtitle">Призери Ukrainian Beauty Awards 2023</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-cell__number">3</span>
+        <span class="stat-cell__label">РОКИ НА РИНКУ</span>
+        <span class="stat-cell__subtitle">На ринку з 2021 р.</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-cell__number">98%</span>
+        <span class="stat-cell__label">РЕКОМЕНДУЮТЬ НАС</span>
+        <span class="stat-cell__subtitle">За опитуваннями клієнтів</span>
+      </div>
     </div>
   </section>
 
@@ -250,21 +154,28 @@
           <span class="specialist-card__name">Аліна Коваль</span>
           <span class="specialist-card__role">Косметолог</span>
           <span class="specialist-card__experience">7+ РОК · #антивіковий · #пілінги</span>
-          <button class="specialist-card__btn">ЗАПИСАТИСЬ ДО АЛІНИ</button>
+          <button class="specialist-card__btn" data-booking-open>ЗАПИСАТИСЬ</button>
         </div>
         <div class="specialist-card">
           <div class="specialist-card__avatar" style="background-image: url('images/generated-1777444528344.png');"></div>
           <span class="specialist-card__name">Марина Петренко</span>
           <span class="specialist-card__role">Масажист</span>
           <span class="specialist-card__experience">5+ РОК · #класичний · #лімфодренаж</span>
-          <button class="specialist-card__btn">ЗАПИСАТИСЬ ДО МАРИНИ</button>
+          <button class="specialist-card__btn" data-booking-open>ЗАПИСАТИСЬ</button>
         </div>
         <div class="specialist-card">
           <div class="specialist-card__avatar" style="background-image: url('images/generated-1777444511563.png');"></div>
           <span class="specialist-card__name">Олена Бондар</span>
           <span class="specialist-card__role">Майстер манікюру</span>
           <span class="specialist-card__experience">6+ РОК · #гель-лак · #нарощування</span>
-          <button class="specialist-card__btn">ЗАПИСАТИСЬ ДО ОЛЕНИ</button>
+          <button class="specialist-card__btn" data-booking-open>ЗАПИСАТИСЬ</button>
+        </div>
+        <div class="specialist-card">
+          <div class="specialist-card__avatar" style="background-image: url('images/generated-1777444519339.png');"></div>
+          <span class="specialist-card__name">Софія Мельник</span>
+          <span class="specialist-card__role">Стиліст по волоссю</span>
+          <span class="specialist-card__experience">8+ РОК · #колорування · #окрашування</span>
+          <button class="specialist-card__btn" data-booking-open>ЗАПИСАТИСЬ</button>
         </div>
       </div>
       <button class="carousel-arrow" aria-label="Наступний">
@@ -276,6 +187,7 @@
       <button class="specialists__dot specialists__dot--active" aria-label="Майстер 1"></button>
       <button class="specialists__dot specialists__dot--inactive" aria-label="Майстер 2"></button>
       <button class="specialists__dot specialists__dot--inactive" aria-label="Майстер 3"></button>
+      <button class="specialists__dot specialists__dot--inactive" aria-label="Майстер 4"></button>
     </div>
     <button class="specialists__all-btn">УСЯ КОМАНДА →</button>
 
@@ -300,7 +212,7 @@
             <span class="service-card__price">від 850 грн</span>
             <span class="service-card__duration">60 хв</span>
           </div>
-          <button class="service-card__cta">ЗАПИСАТИСЬ НА ДОГЛЯД →</button>
+          <button class="service-card__cta" data-booking-open>ЗАПИСАТИСЬ</button>
         </div>
       </div>
       <div class="service-card">
@@ -312,7 +224,7 @@
             <span class="service-card__price">від 1 200 грн</span>
             <span class="service-card__duration">90 хв</span>
           </div>
-          <button class="service-card__cta">ЗАПИСАТИСЬ НА МАСАЖ →</button>
+          <button class="service-card__cta" data-booking-open>ЗАПИСАТИСЬ</button>
         </div>
       </div>
       <div class="service-card">
@@ -324,7 +236,7 @@
             <span class="service-card__price">від 550 грн</span>
             <span class="service-card__duration">75 хв</span>
           </div>
-          <button class="service-card__cta">ЗАПИСАТИСЬ НА МАНІКЮР →</button>
+          <button class="service-card__cta" data-booking-open>ЗАПИСАТИСЬ</button>
         </div>
       </div>
     </div>
@@ -358,8 +270,6 @@
            style="background-image: url('images/generated-1777451127052.png');"></div>
       <div class="portfolio__item"
            style="background-image: url('images/generated-1777451126260.png');"></div>
-      <div class="portfolio__item"
-           style="background-image: url('images/generated-1777451116887.png');"></div>
     </div>
 
     <button class="portfolio__btn">ПЕРЕГЛЯНУТИ ВСЕ ПОРТФОЛІО</button>
@@ -419,7 +329,11 @@
       <span class="reviews__rating-source">· &nbsp;Google Reviews</span>
     </div>
 
-    <!-- Desktop: 3-column grid -->
+    <!-- Mobile: one card + dots; Desktop: carousel showing 3 cards at a time -->
+    <div class="testimonials__carousel">
+      <button class="carousel-arrow" aria-label="Попередній">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
     <div class="reviews__grid">
       <div class="testimonial-card">
         <div class="testimonial-card__stars">
@@ -469,12 +383,138 @@
           </div>
         </div>
       </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span>
+        </div>
+        <p class="testimonial-card__quote">Відвідую LUMINA вже кілька місяців. Кожен візит — це маленька відпустка від суєти міста.</p>
+        <hr class="testimonial-card__divider">
+        <div class="testimonial-card__client">
+          <div class="testimonial-card__avatar testimonial-card__avatar--initials" style="background-color: var(--champagne);">НП</div>
+          <div class="testimonial-card__info">
+            <span class="testimonial-card__name">Наталія Павленко</span>
+            <span class="testimonial-card__service">Догляд за обличчям</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span>
+        </div>
+        <p class="testimonial-card__quote">Манікюр тримається понад три тижні! Аліна — просто чарівниця, завжди точно вгадує мій стиль.</p>
+        <hr class="testimonial-card__divider">
+        <div class="testimonial-card__client">
+          <div class="testimonial-card__avatar testimonial-card__avatar--initials" style="background-color: var(--champagne);">ТБ</div>
+          <div class="testimonial-card__info">
+            <span class="testimonial-card__name">Тетяна Бондар</span>
+            <span class="testimonial-card__service">Манікюр</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span>
+        </div>
+        <p class="testimonial-card__quote">Найкращий масаж у Києві. Після процедури відчуваєш себе зовсім оновленою. Рекомендую Марину!</p>
+        <hr class="testimonial-card__divider">
+        <div class="testimonial-card__client">
+          <div class="testimonial-card__avatar testimonial-card__avatar--initials" style="background-color: var(--champagne);">ОД</div>
+          <div class="testimonial-card__info">
+            <span class="testimonial-card__name">Оксана Дяченко</span>
+            <span class="testimonial-card__service">Масаж тіла</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span>
+        </div>
+        <p class="testimonial-card__quote">Інтер'єр витончений, персонал уважний. Відчуваєш себе VIP-клієнткою щоразу.</p>
+        <hr class="testimonial-card__divider">
+        <div class="testimonial-card__client">
+          <div class="testimonial-card__avatar testimonial-card__avatar--initials" style="background-color: var(--champagne);">ЛГ</div>
+          <div class="testimonial-card__info">
+            <span class="testimonial-card__name">Людмила Горова</span>
+            <span class="testimonial-card__service">Догляд за обличчям</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span>
+        </div>
+        <p class="testimonial-card__quote">Подруга порадила LUMINA — тепер сама раджу всім. Олена зробила дивовижний манікюр.</p>
+        <hr class="testimonial-card__divider">
+        <div class="testimonial-card__client">
+          <div class="testimonial-card__avatar testimonial-card__avatar--initials" style="background-color: var(--champagne);">ВШ</div>
+          <div class="testimonial-card__info">
+            <span class="testimonial-card__name">Валентина Шевченко</span>
+            <span class="testimonial-card__service">Манікюр та педикюр</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span>
+        </div>
+        <p class="testimonial-card__quote">Пришла вперше на масаж — вийшла з бажанням записатись одразу на місяць вперед. Чудово!</p>
+        <hr class="testimonial-card__divider">
+        <div class="testimonial-card__client">
+          <div class="testimonial-card__avatar testimonial-card__avatar--initials" style="background-color: var(--champagne);">КЛ</div>
+          <div class="testimonial-card__info">
+            <span class="testimonial-card__name">Катерина Лисенко</span>
+            <span class="testimonial-card__service">Масаж тіла</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+          <span class="testimonial-card__star">★</span>
+        </div>
+        <p class="testimonial-card__quote">Сервіс на рівні п'ятизіркового готелю. Відчуваєш себе бажаним гостем з першої секунди.</p>
+        <hr class="testimonial-card__divider">
+        <div class="testimonial-card__client">
+          <div class="testimonial-card__avatar testimonial-card__avatar--initials" style="background-color: var(--champagne);">АК</div>
+          <div class="testimonial-card__info">
+            <span class="testimonial-card__name">Анна Кравченко</span>
+            <span class="testimonial-card__service">Догляд за обличчям</span>
+          </div>
+        </div>
+      </div>
+    </div>
+      <button class="carousel-arrow" aria-label="Наступний">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div>
 
-    <div class="testimonials__dots">
-      <button class="testimonials__dot testimonials__dot--active" aria-label="Відгук 1"></button>
-      <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 2"></button>
-      <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 3"></button>
+    <div class="testimonials__footer">
+      <div class="testimonials__dots">
+        <button class="testimonials__dot testimonials__dot--active" aria-label="Відгук 1"></button>
+        <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 2"></button>
+        <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 3"></button>
+        <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 4"></button>
+        <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 5"></button>
+        <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 6"></button>
+        <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 7"></button>
+        <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 8"></button>
+        <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 9"></button>
+        <button class="testimonials__dot testimonials__dot--inactive" aria-label="Відгук 10"></button>
+      </div>
+      <a href="https://maps.google.com/maps?q=LUMINA+Beauty+Salon+Kyiv" target="_blank" rel="noopener noreferrer" class="testimonials__google-link">Всі відгуки в Google →</a>
     </div>
   </section>
 
@@ -500,19 +540,21 @@
           <span class="map-section__detail-text">Пн–Пт: 9:00 — 20:00<br>Сб–Нд: 10:00 — 18:00</span>
         </div>
       </div>
-      <a href="#" class="map-section__route">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-        Прокласти маршрут →
-      </a>
-      <a href="#" class="map-section__cta">ЗАПИСАТИСЬ ОНЛАЙН →</a>
+      <div class="map-section__routes">
+        <a href="https://maps.google.com/?q=%D0%B2%D1%83%D0%BB.+%D0%A5%D1%80%D0%B5%D1%89%D0%B0%D1%82%D0%B8%D0%BA+10+%D0%9A%D0%B8%D1%97%D0%B2" target="_blank" rel="noopener noreferrer" class="map-section__route-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          Google Maps
+        </a>
+        <a href="https://maps.apple.com/?q=%D0%B2%D1%83%D0%BB.+%D0%A5%D1%80%D0%B5%D1%89%D0%B0%D1%82%D0%B8%D0%BA+10+%D0%9A%D0%B8%D1%97%D0%B2" target="_blank" rel="noopener noreferrer" class="map-section__route-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          Apple Maps
+        </a>
+      </div>
+      <button class="map-section__cta" data-booking-open>ЗАПИСАТИСЬ →</button>
     </div>
 
     <div class="map-section__map-wrapper">
-      <div class="map-section__image"></div>
-      <div class="map-section__pin">
-        <svg class="map-section__pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div class="map-section__pin-label">LUMINA</div>
-      </div>
+      <iframe class="map-section__image" src="https://www.openstreetmap.org/export/embed.html?bbox=30.5180%2C50.4460%2C30.5290%2C50.4515&amp;layer=mapnik&amp;marker=50.4486%2C30.5234" title="Карта: вул. Хрещатик 10, Київ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
 
@@ -587,12 +629,82 @@
   <!-- ╔══════════════════════════════╗ -->
   <!-- ║  FLOATING BOOKING BUTTON      ║ -->
   <!-- ╚══════════════════════════════╝ -->
-  <a href="#contact" class="float-btn" aria-label="Записатись">
+  <button class="float-btn" aria-label="Записатись" data-booking-open>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/>
     </svg>
     <span>Записатись</span>
-  </a>
+  </button>
+
+  <!-- ╔══════════════════════════════╗ -->
+  <!-- ║  BOOKING MODAL                ║ -->
+  <!-- ╚══════════════════════════════╝ -->
+  <div class="booking-modal" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+    <div class="booking-modal__dialog">
+      <div class="booking-modal__drag-handle" aria-hidden="true"></div>
+      <div class="booking-modal__header">
+        <h2 class="booking-modal__title" id="booking-modal-title">Записатись на процедуру</h2>
+        <button class="booking-modal__close" aria-label="Закрити" data-booking-close>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="booking-modal__body">
+        <form class="booking-modal__form" novalidate>
+          <div class="booking-modal__field">
+            <label class="booking-modal__label" for="bm-name">Ваше ім'я</label>
+            <input class="booking-modal__input" type="text" id="bm-name" name="name" placeholder="Ірина" autocomplete="given-name" required>
+          </div>
+          <div class="booking-modal__field">
+            <label class="booking-modal__label" for="bm-phone">Телефон</label>
+            <input class="booking-modal__input" type="tel" id="bm-phone" name="phone" placeholder="+380 XX XXX XX XX" pattern="\+380\d{9}" autocomplete="tel" required>
+          </div>
+          <div class="booking-modal__row">
+            <div class="booking-modal__field">
+              <label class="booking-modal__label" for="bm-service">Послуга</label>
+              <select class="booking-modal__select" id="bm-service" name="service" required>
+                <option value="" disabled selected>Оберіть послугу</option>
+                <option value="face">Догляд за обличчям</option>
+                <option value="massage">Масаж тіла</option>
+                <option value="manicure">Манікюр</option>
+              </select>
+            </div>
+            <div class="booking-modal__field">
+              <label class="booking-modal__label" for="bm-master">Майстер</label>
+              <select class="booking-modal__select" id="bm-master" name="master">
+                <option value="" selected>Будь-який</option>
+                <option value="alina">Аліна</option>
+                <option value="marina">Марина</option>
+                <option value="olena">Олена</option>
+              </select>
+            </div>
+          </div>
+          <div class="booking-modal__field">
+            <label class="booking-modal__label" for="bm-date">Бажана дата</label>
+            <input class="booking-modal__input" type="date" id="bm-date" name="date">
+          </div>
+          <div class="booking-modal__field">
+            <label class="booking-modal__label" for="bm-comment">Коментар</label>
+            <textarea class="booking-modal__textarea" id="bm-comment" name="comment" placeholder="Побажання або питання..."></textarea>
+          </div>
+          <label class="booking-modal__consent">
+            <input class="booking-modal__checkbox" type="checkbox" name="consent" required>
+            <span class="booking-modal__consent-text">Погоджуюсь з <a href="#">політикою конфіденційності</a></span>
+          </label>
+          <div class="booking-modal__error" role="alert">Будь ласка, заповніть усі обов'язкові поля.</div>
+          <button class="booking-modal__submit" type="submit">ЗАПИСАТИСЬ</button>
+        </form>
+        <div class="booking-modal__success" aria-live="polite">
+          <svg class="booking-modal__success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <p class="booking-modal__success-title">Дякуємо!</p>
+          <p class="booking-modal__success-text">Ваш запис прийнято. Наш адміністратор зв'яжеться з вами найближчим часом.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

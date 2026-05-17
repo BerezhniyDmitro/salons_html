@@ -60,7 +60,14 @@
   line-height: 1.6;
 }
 
-.map-section__route {
+.map-section__routes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.map-section__route-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -69,11 +76,12 @@
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.1em;
-  margin-top: 16px;
+  text-decoration: none;
   cursor: pointer;
+  transition: opacity 0.2s;
 }
 
-.map-section__route:hover {
+.map-section__route-btn:hover {
   opacity: 0.8;
 }
 
@@ -91,6 +99,7 @@
   letter-spacing: 0.1em;
   margin-top: 24px;
   cursor: pointer;
+  border: none;
   transition: opacity 0.2s;
 }
 
@@ -100,19 +109,33 @@
 
 .map-section__map-wrapper {
   width: 100%;
+  position: relative;
 }
 
 .map-section__image {
-  background-image: url('../../images/generated-1777451031852.png');
-  background-size: cover;
-  background-position: center;
-  height: 240px;
-  border-radius: 4px;
+  display: block;
   width: 100%;
+  height: 240px;
+  border: none;
+  border-radius: 4px;
 }
 
-.map-section__pin {
-  display: none;
+
+.map-section__pin-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--champagne);
+}
+
+.map-section__pin-label {
+  background: var(--ink);
+  color: var(--champagne);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 6px 12px;
+  border-radius: 8px;
 }
 
 /* ─── Desktop ──────────────────────────────────────────────────── */
@@ -162,10 +185,14 @@
     color: var(--sand);
   }
 
-  .map-section__route {
-    gap: 8px;
-    font-size: 13px;
+  .map-section__routes {
+    flex-direction: row;
+    gap: 16px;
     margin-top: 0;
+  }
+
+  .map-section__route-btn {
+    font-size: 13px;
   }
 
   .map-section__cta {
@@ -188,36 +215,8 @@
   .map-section__image {
     position: absolute;
     inset: 0;
+    width: 100%;
     height: 100%;
     border-radius: 0;
-    background-image: url('../../images/generated-1777450071512.png');
-  }
-
-  .map-section__pin {
-    position: absolute;
-    left: 380px;
-    top: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    z-index: 2;
-  }
-
-  .map-section__pin-icon {
-    width: 32px;
-    height: 32px;
-    color: var(--champagne);
-  }
-
-  .map-section__pin-label {
-    background: var(--ink);
-    color: var(--champagne);
-    font-family: var(--font-body);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    padding: 6px 12px;
-    border-radius: 8px;
   }
 }
