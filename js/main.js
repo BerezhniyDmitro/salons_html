@@ -108,16 +108,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ─── Testimonials dots (mobile) ────────────────────────────────
+  // ─── Testimonials dots (mobile scroll-sync) ────────────────────
+  const testGrid = document.querySelector('.reviews__grid');
   const dots = document.querySelectorAll('.testimonials__dot');
-  const cards = document.querySelectorAll('.reviews__grid .testimonial-card');
-  if (dots.length && cards.length) {
-    const dotsContainer = dots[0]?.parentElement;
+  if (testGrid && dots.length) {
+    const syncTestDots = () => {
+      const idx = Math.round(testGrid.scrollLeft / testGrid.offsetWidth);
+      dots.forEach((d, i) => {
+        d.classList.toggle('testimonials__dot--active', i === idx);
+        d.classList.toggle('testimonials__dot--inactive', i !== idx);
+      });
+    };
+    testGrid.addEventListener('scroll', syncTestDots, { passive: true });
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
-        if (dotsContainer && getComputedStyle(dotsContainer).display === 'none') return;
-        cards.forEach((c, j) => { c.style.display = j === i ? 'flex' : 'none'; });
-        dots.forEach(d => { d.classList.toggle('testimonials__dot--active', d === dot); d.classList.toggle('testimonials__dot--inactive', d !== dot); });
+        if (getComputedStyle(testGrid).scrollSnapType === 'none') return;
+        testGrid.scrollTo({ left: i * testGrid.offsetWidth, behavior: 'smooth' });
+      });
+    });
+  }
+
+  // ─── Specialists dots (mobile scroll-sync) ─────────────────────
+  const specTrack = document.querySelector('.specialists__track');
+  const specDots = document.querySelectorAll('.specialists__dot');
+  if (specTrack && specDots.length) {
+    const syncDots = () => {
+      const idx = Math.round(specTrack.scrollLeft / specTrack.offsetWidth);
+      specDots.forEach((d, i) => {
+        d.classList.toggle('specialists__dot--active', i === idx);
+        d.classList.toggle('specialists__dot--inactive', i !== idx);
+      });
+    };
+    specTrack.addEventListener('scroll', syncDots, { passive: true });
+    specDots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        specTrack.scrollTo({ left: i * specTrack.offsetWidth, behavior: 'smooth' });
       });
     });
   }

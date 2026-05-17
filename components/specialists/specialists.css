@@ -37,16 +37,30 @@
 
 .specialists__carousel {
   width: 100%;
+  overflow: hidden;
 }
 
 .specialists__track {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  flex-direction: row;
+  gap: 16px;
   padding: 0 16px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-.specialists__dots { display: none; }
+.specialists__track::-webkit-scrollbar { display: none; }
+
+.specialists__dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 0 16px;
+}
 
 .specialists__dot {
   width: 8px;
@@ -68,12 +82,15 @@
 .specialist-card {
   text-align: center;
   padding: 24px;
-  background: var(--cream);
-  border-radius: 4px;
+  background: var(--ivory);
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   align-items: center;
+  flex-shrink: 0;
+  width: calc(100vw - 56px);
+  scroll-snap-align: start;
 }
 
 .specialist-card__avatar {
@@ -134,9 +151,9 @@
   .specialists__title { font-size: 44px; }
   .specialists__subtitle { display: block; font-family: var(--font-body); font-size: 15px; color: var(--stone); line-height: 1.65; max-width: 520px; text-align: center; }
   .specialists__carousel { display: flex; align-items: center; gap: 24px; width: 100%; max-width: 1200px; }
-  .specialists__track { flex-direction: row; gap: 32px; flex: 1; padding: 0; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .specialists__track { flex-direction: row; gap: 32px; flex: 1; padding: 0; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-snap-type: none; }
   .specialists__track::-webkit-scrollbar { display: none; }
-  .specialist-card { flex-shrink: 0; width: 344px; padding: 32px 28px 36px; gap: 16px; background-color: var(--ivory); border-radius: 20px; }
+  .specialist-card { flex-shrink: 0; width: 344px; padding: 32px 28px 36px; gap: 16px; background-color: var(--ivory); border-radius: 20px; scroll-snap-align: none; }
   .specialist-card__avatar { width: 120px; height: 120px; margin: 0; }
   .specialist-card__name { font-size: 22px; }
   .specialist-card__role { font-size: 14px; }
